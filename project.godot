@@ -13,4 +13,13 @@ config_version=5
 config/name="Reverie Memory"
 run/main_scene="res://scenes/character_select.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(1, 0, 1, 1)
 config/icon="res://icon.svg"
+
+[autoload]
+
+CursorTrail="*res://scenes/cursor_trail.tscn"
+
+[display]
+
+mouse_cursor/custom_image="res://resources/1x1.png"
