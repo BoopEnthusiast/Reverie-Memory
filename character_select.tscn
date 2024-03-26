@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmv7ye4alqwea"]
+
+[sub_resource type="GDScript" id="GDScript_xlq8j"]
+script/source = "extends Button
+
+var future_scene = preload(\"res://future.tscn\")
+
+
+func _on_pressed():
+	get_tree().change_scene_to_packed(future_scene)
+	
+"
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FutureButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 250.0
+offset_top = -185.0
+offset_right = 484.0
+offset_bottom = 185.0
+grow_vertical = 2
+script = SubResource("GDScript_xlq8j")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -185.0
+offset_right = -228.0
+offset_bottom = 185.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[connection signal="pressed" from="FutureButton" to="FutureButton" method="_on_pressed"]
