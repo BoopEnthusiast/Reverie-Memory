@@ -13,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	dot.global_position = get_global_mouse_position()
 	for i in range(point_count - 1, -1, -1):
 		if i > 0:
