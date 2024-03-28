@@ -9,6 +9,7 @@ point_count = 2
 metadata/_snap_enabled = true
 
 [node name="Trail" type="Line2D"]
+z_index = 20
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 width = 20.0
 width_curve = SubResource("Curve_02d0c")
