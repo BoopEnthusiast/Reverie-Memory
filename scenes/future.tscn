@@ -57,6 +57,9 @@ offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "password"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]

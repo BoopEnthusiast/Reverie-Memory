@@ -15,8 +15,6 @@ func _on_exit_pressed():
 	monitor_screen.visible = false
 
 
-
 func _on_password_field_text_changed():
 	if password_field.text == password:
 		password_field.visible = false
-		
