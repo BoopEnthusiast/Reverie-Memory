@@ -1,4 +1,38 @@
-[gd_scene format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=3 format=3 uid="uid://byiwg4wsetanr"]
+
+[sub_resource type="GDScript" id="GDScript_y21dh"]
+resource_name = "Book"
+script/source = "extends Button
+
+@onready var book_screen = $\"../Book_Screen\"
+
+# Called when the node enters the scene tree for the first time.
+
+func _on_book_pressed():
+	book_screen.visible = true
+
+func _on_exit_button_pressed():
+	book_screen.visible = false
+
+
+
+func _on_pressed():
+	book_screen.visible = true
+"
+
+[sub_resource type="GDScript" id="GDScript_whluy"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Past" type="Control"]
 layout_mode = 3
@@ -8,11 +42,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Book" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -202.0
+offset_right = -31.0
+offset_bottom = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "BOOK
+"
+script = SubResource("GDScript_y21dh")
+
+[node name="Book_Screen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -237.0
+offset_right = 386.0
+offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.858824, 0.560784, 0.313726, 1)
+
+[node name="Exit_Button" type="Button" parent="Book_Screen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "X
+"
+script = SubResource("GDScript_whluy")
+
+[connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
+[connection signal="pressed" from="Book_Screen/Exit_Button" to="Book" method="_on_exit_button_pressed"]
