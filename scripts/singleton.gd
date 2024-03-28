@@ -1,4 +1,4 @@
 extends Node
-class_name Singleton
+class_name SingletonN
 
 var is_dragging = false

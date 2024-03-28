@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=4 format=3 uid="uid://byiwg4wsetanr"]
+
+[ext_resource type="PackedScene" uid="uid://duybjc8xb6syf" path="res://scenes/drag_simbol.tscn" id="1_tjlgk"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
 resource_name = "Book"
@@ -72,6 +74,7 @@ offset_right = 386.0
 offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.839216, 0.827451, 0.596078, 1)
 
 [node name="Exit_Button" type="Button" parent="Book_Screen"]
 layout_mode = 1
@@ -85,16 +88,19 @@ text = "X
 "
 script = SubResource("GDScript_whluy")
 
-[node name="Panel" type="Panel" parent="Book_Screen"]
+[node name="Symbol_one" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 87.0
-offset_top = -93.0
-offset_right = 127.0
-offset_bottom = -53.0
-grow_vertical = 0
+offset_left = 115.0
+offset_top = 23.5
+offset_right = 215.0
+offset_bottom = 123.5
+
+[node name="Symbol_one2" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = -276.0
+offset_top = -58.5
+offset_right = -176.0
+offset_bottom = 41.5
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="Book_Screen/Exit_Button" to="Book" method="_on_exit_button_pressed"]
