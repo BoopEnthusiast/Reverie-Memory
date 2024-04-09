@@ -1,8 +1,8 @@
 extends Panel
-
+class_name Symbol
 var is_mouse_on = false
 var is_dragging_this = false
-
+@export var symbol : String
 
 func _on_mouse_entered():
 	is_mouse_on = true
