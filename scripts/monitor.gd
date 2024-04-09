@@ -2,8 +2,8 @@ extends Button
 const password = "sunflower"
 
 @onready var monitor_screen = $"../MonitorScreen"
-
-@onready var password_field = $"../MonitorScreen/PasswordField"
+@onready var password_screen = $"../MonitorScreen/Password"
+@onready var password_field = $"../MonitorScreen/Password/PasswordField"
 
 
 func _on_pressed():
@@ -17,4 +17,4 @@ func _on_exit_pressed():
 
 func _on_password_field_text_changed():
 	if password_field.text == password:
-		password_field.visible = false
+		password_screen.visible = false
