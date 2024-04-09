@@ -90,17 +90,92 @@ script = SubResource("GDScript_whluy")
 
 [node name="Symbol_one" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
 layout_mode = 1
-offset_left = 115.0
-offset_top = 23.5
-offset_right = 215.0
-offset_bottom = 123.5
+offset_left = -239.0
+offset_top = 96.5
+offset_right = -179.0
+offset_bottom = 156.5
+pivot_offset = Vector2(30, 30)
+symbol = "a"
 
-[node name="Symbol_one2" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+[node name="Symbol_two" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
 layout_mode = 1
-offset_left = -276.0
-offset_top = -58.5
-offset_right = -176.0
-offset_bottom = 41.5
+offset_left = -374.0
+offset_top = 95.5
+offset_right = -314.0
+offset_bottom = 155.5
+pivot_offset = Vector2(30, 30)
+symbol = "b"
+
+[node name="Symbol_three" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = 96.0
+offset_top = 162.5
+offset_right = 156.0
+offset_bottom = 222.5
+pivot_offset = Vector2(30, 30)
+symbol = "c"
+
+[node name="Symbol_four" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = 28.0
+offset_top = 99.5
+offset_right = 88.0
+offset_bottom = 159.5
+pivot_offset = Vector2(30, 30)
+symbol = "d"
+
+[node name="Symbol_five" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = -169.0
+offset_top = 167.5
+offset_right = -109.0
+offset_bottom = 227.5
+pivot_offset = Vector2(30, 30)
+symbol = "e"
+
+[node name="Symbol_six" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = -109.0
+offset_top = 97.5
+offset_right = -49.0
+offset_bottom = 157.5
+pivot_offset = Vector2(30, 30)
+symbol = "f"
+
+[node name="Symbol_seven" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = -41.0
+offset_top = 159.5
+offset_right = 19.0
+offset_bottom = 219.5
+pivot_offset = Vector2(30, 30)
+symbol = "g"
+
+[node name="Symbol_eight" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+layout_mode = 1
+offset_left = -301.0
+offset_top = 164.5
+offset_right = -241.0
+offset_bottom = 224.5
+pivot_offset = Vector2(30, 30)
+symbol = "h"
+
+[node name="TextEdit" type="TextEdit" parent="Book_Screen"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 51.0
+offset_right = 674.0
+offset_bottom = 80.0
+text = "HERE WILL BE A QUESTION IN CYPHER"
+placeholder_text = "HERE WILL BE A QUESTION IN CYPHER"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="Book_Screen/Exit_Button" to="Book" method="_on_exit_button_pressed"]
