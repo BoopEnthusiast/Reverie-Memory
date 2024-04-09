@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=10 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="PackedScene" uid="uid://duybjc8xb6syf" path="res://scenes/drag_simbol.tscn" id="1_tjlgk"]
 [ext_resource type="Script" path="res://scripts/socket_for_draggable.gd" id="2_lqkhs"]
@@ -39,6 +39,29 @@ func _process(delta):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vl60j"]
 size = Vector2(32, 32)
+
+[sub_resource type="GDScript" id="GDScript_3dqqp"]
+script/source = "extends Area2D
+
+
+
+
+func _on_body_entered(body):
+	print(\"HELLOO\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rexa5"]
+size = Vector2(118, 104)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uksid"]
+
+[sub_resource type="GDScript" id="GDScript_hyl0j"]
+script/source = "extends AnimatableBody2D
+
+
+func _physics_process(delta):
+	global_position.x -= delta * 50
+"
 
 [node name="Past" type="Control"]
 layout_mode = 3
@@ -109,70 +132,39 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 
-[node name="Symbols folder" type="Node" parent="Book_Screen"]
-
-[node name="Symbol_one" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = -150.0
-offset_top = 136.0
-offset_right = -90.0
-offset_bottom = 196.0
-pivot_offset = Vector2(30, 30)
+[node name="Symbol_one" parent="Book_Screen" instance=ExtResource("1_tjlgk")]
+position = Vector2(87, 360)
 symbol = "a"
 
+[node name="Symbols folder" type="Control" parent="Book_Screen"]
+anchors_preset = 0
+
 [node name="Symbol_two" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = -351.0
-offset_top = 134.0
-offset_right = -291.0
-offset_bottom = 194.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(193, 327)
 symbol = "b"
 
 [node name="Symbol_three" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = 309.0
-offset_top = 136.0
-offset_right = 369.0
-offset_bottom = 196.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(281, 402)
 symbol = "c"
 
 [node name="Symbol_four" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = 227.0
-offset_top = 138.0
-offset_right = 287.0
-offset_bottom = 198.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(378, 403)
 symbol = "d"
 
 [node name="Symbol_five" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = -56.0
-offset_top = 134.0
-offset_right = 4.0
-offset_bottom = 194.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(471, 406)
 symbol = "e"
 
 [node name="Symbol_six" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = 42.0
-offset_top = 136.0
-offset_right = 102.0
-offset_bottom = 196.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(557, 406)
 symbol = "f"
 
 [node name="Symbol_seven" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = 130.0
-offset_top = 137.0
-offset_right = 190.0
-offset_bottom = 197.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(650, 404)
 symbol = "g"
 
 [node name="Symbol_eight" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-offset_left = -253.0
-offset_top = 134.0
-offset_right = -193.0
-offset_bottom = 194.0
-pivot_offset = Vector2(30, 30)
+position = Vector2(716, 340)
 symbol = "h"
 
 [node name="Area2D" type="Area2D" parent="Book_Screen"]
@@ -190,9 +182,34 @@ offset_right = 159.0
 offset_bottom = 174.0
 pivot_offset = Vector2(32.5, 32.5)
 
+[node name="Area2D2" type="Area2D" parent="Book_Screen"]
+position = Vector2(387, 229)
+script = SubResource("GDScript_3dqqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book_Screen/Area2D2"]
+shape = SubResource("RectangleShape2D_rexa5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Book_Screen/Area2D2"]
+scale = Vector2(112, 106)
+texture = SubResource("PlaceholderTexture2D_uksid")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Book_Screen"]
+position = Vector2(102, -20)
+script = SubResource("GDScript_hyl0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book_Screen/AnimatableBody2D"]
+position = Vector2(519, 241)
+shape = SubResource("RectangleShape2D_rexa5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Book_Screen/AnimatableBody2D"]
+position = Vector2(519, 241)
+scale = Vector2(112, 106)
+texture = SubResource("PlaceholderTexture2D_uksid")
+
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="Book_Screen/Exit_Button" to="Book" method="_on_exit_button_pressed"]
 [connection signal="tree_entered" from="Book_Screen/Symbols folder/Symbol_two" to="Book_Screen/Area2D" method="_on_symbol_two_tree_entered"]
 [connection signal="body_entered" from="Book_Screen/Area2D" to="Book_Screen/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Book_Screen/Area2D" to="Book_Screen/Area2D" method="_on_body_exited"]
 [connection signal="child_entered_tree" from="Book_Screen/Area2D/CollisionShape2D" to="Book_Screen/Area2D" method="_on_collision_shape_2d_child_entered_tree"]
+[connection signal="body_entered" from="Book_Screen/Area2D2" to="Book_Screen/Area2D2" method="_on_body_entered"]
