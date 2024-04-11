@@ -133,7 +133,12 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 
 [node name="Symbols folder" type="Control" parent="Book_Screen"]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Symbol_one" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
 position = Vector2(87, 360)
