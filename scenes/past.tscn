@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=4 format=3 uid="uid://byiwg4wsetanr"]
 
-[ext_resource type="PackedScene" uid="uid://duybjc8xb6syf" path="res://scenes/drag_simbol.tscn" id="1_tjlgk"]
-[ext_resource type="Script" path="res://scripts/socket_for_draggable.gd" id="2_lqkhs"]
+[ext_resource type="Texture2D" uid="uid://qaowkfvq7jio" path="res://resources/flowers.png" id="1_w3ga5"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
 resource_name = "Book"
@@ -37,32 +36,6 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vl60j"]
-size = Vector2(32, 32)
-
-[sub_resource type="GDScript" id="GDScript_3dqqp"]
-script/source = "extends Area2D
-
-
-
-
-func _on_body_entered(body):
-	print(\"HELLOO\")
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rexa5"]
-size = Vector2(118, 104)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uksid"]
-
-[sub_resource type="GDScript" id="GDScript_hyl0j"]
-script/source = "extends AnimatableBody2D
-
-
-func _physics_process(delta):
-	global_position.x -= delta * 50
-"
-
 [node name="Past" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -89,6 +62,7 @@ text = "BOOK
 script = SubResource("GDScript_y21dh")
 
 [node name="Book_Screen" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,7 +75,6 @@ offset_right = 386.0
 offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.839216, 0.827451, 0.596078, 1)
 
 [node name="Exit_Button" type="Button" parent="Book_Screen"]
 layout_mode = 1
@@ -115,106 +88,12 @@ text = "X
 "
 script = SubResource("GDScript_whluy")
 
-[node name="TextEdit" type="TextEdit" parent="Book_Screen"]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 51.0
-offset_right = 674.0
-offset_bottom = 80.0
-text = "HERE WILL BE A QUESTION IN CYPHER"
-placeholder_text = "HERE WILL BE A QUESTION IN CYPHER"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
+[node name="Flowers" type="Sprite2D" parent="."]
+position = Vector2(688, 275)
+scale = Vector2(0.193697, 0.193697)
+texture = ExtResource("1_w3ga5")
 
-[node name="Symbols folder" type="Control" parent="Book_Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Symbol_one" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(87, 360)
-symbol = "a"
-
-[node name="Symbol_two" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(193, 327)
-symbol = "b"
-
-[node name="Symbol_three" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(281, 402)
-symbol = "c"
-
-[node name="Symbol_four" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(378, 403)
-symbol = "d"
-
-[node name="Symbol_five" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(471, 406)
-symbol = "e"
-
-[node name="Symbol_six" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(557, 406)
-symbol = "f"
-
-[node name="Symbol_seven" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(650, 404)
-symbol = "g"
-
-[node name="Symbol_eight" parent="Book_Screen/Symbols folder" instance=ExtResource("1_tjlgk")]
-position = Vector2(716, 340)
-symbol = "h"
-
-[node name="Area2D" type="Area2D" parent="Book_Screen"]
-script = ExtResource("2_lqkhs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book_Screen/Area2D"]
-position = Vector2(127, 142)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_vl60j")
-
-[node name="Panel" type="Panel" parent="Book_Screen/Area2D"]
-offset_left = 94.0
-offset_top = 109.0
-offset_right = 159.0
-offset_bottom = 174.0
-pivot_offset = Vector2(32.5, 32.5)
-
-[node name="Area2D2" type="Area2D" parent="Book_Screen"]
-position = Vector2(387, 229)
-script = SubResource("GDScript_3dqqp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book_Screen/Area2D2"]
-shape = SubResource("RectangleShape2D_rexa5")
-
-[node name="Sprite2D" type="Sprite2D" parent="Book_Screen/Area2D2"]
-scale = Vector2(112, 106)
-texture = SubResource("PlaceholderTexture2D_uksid")
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Book_Screen"]
-position = Vector2(102, -20)
-script = SubResource("GDScript_hyl0j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book_Screen/AnimatableBody2D"]
-position = Vector2(519, 241)
-shape = SubResource("RectangleShape2D_rexa5")
-
-[node name="Sprite2D" type="Sprite2D" parent="Book_Screen/AnimatableBody2D"]
-position = Vector2(519, 241)
-scale = Vector2(112, 106)
-texture = SubResource("PlaceholderTexture2D_uksid")
+[node name="StaticBody2D" type="StaticBody2D" parent="Flowers"]
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="Book_Screen/Exit_Button" to="Book" method="_on_exit_button_pressed"]
-[connection signal="tree_entered" from="Book_Screen/Symbols folder/Symbol_two" to="Book_Screen/Area2D" method="_on_symbol_two_tree_entered"]
-[connection signal="body_entered" from="Book_Screen/Area2D" to="Book_Screen/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Book_Screen/Area2D" to="Book_Screen/Area2D" method="_on_body_exited"]
-[connection signal="child_entered_tree" from="Book_Screen/Area2D/CollisionShape2D" to="Book_Screen/Area2D" method="_on_collision_shape_2d_child_entered_tree"]
-[connection signal="body_entered" from="Book_Screen/Area2D2" to="Book_Screen/Area2D2" method="_on_body_entered"]
