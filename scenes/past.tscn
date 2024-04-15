@@ -71,7 +71,6 @@ texture = ExtResource("1_w3ga5")
 [node name="StaticBody2D" type="StaticBody2D" parent="Flowers"]
 
 [node name="Book_Screen" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
