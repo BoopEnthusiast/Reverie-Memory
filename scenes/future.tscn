@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=3 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
+[ext_resource type="AudioStream" uid="uid://cav4leymopix0" path="res://resources/sounds/call mom 3.mp3" id="2_pwwtv"]
 
 [node name="Future" type="Control"]
 layout_mode = 3
@@ -62,6 +63,40 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pwwtv")
+autoplay = true
+
+[node name="StickyNote" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -476.0
+offset_right = -63.0
+offset_bottom = -382.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 1, 0, 1)
+
+[node name="Label" type="Label" parent="StickyNote"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reminder:
+Call mom"
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]

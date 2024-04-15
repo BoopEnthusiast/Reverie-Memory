@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=6 format=3 uid="uid://byiwg4wsetanr"]
 
-[ext_resource type="Script" path="res://scripts/past.gd" id="1_sw1vn"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
 [ext_resource type="Texture2D" uid="uid://qaowkfvq7jio" path="res://resources/flowers.png" id="6_lamyr"]
 [ext_resource type="AudioStream" uid="uid://cm8ux6lm6jna6" path="res://resources/sounds/dont forget homework.mp3" id="7_434is"]
@@ -24,7 +23,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sw1vn")
 
 [node name="Book" type="Button" parent="."]
 layout_mode = 1
@@ -76,9 +74,41 @@ grow_horizontal = 1
 
 [node name="Screens" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="BookScreen" parent="Screens" instance=ExtResource("2_36bpd")]
+
+[node name="StickyNote" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -323.0
+offset_right = -54.0
+offset_bottom = -229.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 1, 0, 1)
+
+[node name="Label" type="Label" parent="StickyNote"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reminder:
+Do your
+homework"
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
