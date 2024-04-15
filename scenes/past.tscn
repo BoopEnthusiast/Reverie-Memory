@@ -77,6 +77,5 @@ grow_horizontal = 1
 layer = 2
 
 [node name="BookScreen" parent="Screens" instance=ExtResource("2_36bpd")]
-visible = true
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
