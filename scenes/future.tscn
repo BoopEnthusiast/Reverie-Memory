@@ -61,6 +61,8 @@ context_menu_enabled = false
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
 [connection signal="text_changed" from="MonitorScreen/PasswordField" to="Monitor" method="_on_password_field_text_changed"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/past.gd" id="1_sw1vn"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
+[ext_resource type="AudioStream" uid="uid://dkj52w7pp1x2i" path="res://resources/sounds/hey, are you coming.mp3" id="3_r238c"]
 [ext_resource type="Texture2D" uid="uid://qaowkfvq7jio" path="res://resources/flowers.png" id="6_lamyr"]
-[ext_resource type="AudioStream" uid="uid://cm8ux6lm6jna6" path="res://resources/sounds/dont forget homework.mp3" id="7_434is"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
@@ -60,7 +60,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_lamyr")
 
 [node name="HomeworkReminder" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_434is")
+stream = ExtResource("3_r238c")
 
 [node name="Door" parent="." instance=ExtResource("8_8rlnr")]
 layout_mode = 1
@@ -78,4 +78,8 @@ layer = 2
 
 [node name="BookScreen" parent="Screens" instance=ExtResource("2_36bpd")]
 
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
+[connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
