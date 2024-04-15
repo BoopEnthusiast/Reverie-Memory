@@ -8,7 +8,10 @@ _data = [Vector2(0, 1), 0.0, -0.356319, 0, 0, Vector2(0.3, 0.5), -1.35579, -1.35
 point_count = 3
 metadata/_snap_enabled = true
 
-[node name="Trail" type="Line2D"]
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 5
+
+[node name="Trail" type="Line2D" parent="."]
 z_index = 20
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 width = 20.0
@@ -18,12 +21,12 @@ begin_cap_mode = 2
 antialiased = true
 script = ExtResource("1_g3ba8")
 
-[node name="Dot" type="Sprite2D" parent="."]
+[node name="Dot" type="Sprite2D" parent="Trail"]
 scale = Vector2(0.0333333, 0.0333333)
 texture = ExtResource("2_t5j2u")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Trail"]
 process_callback = 0
 wait_time = 0.1
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Trail/Timer" to="Trail" method="_on_timer_timeout"]

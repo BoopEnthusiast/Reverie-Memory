@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cm8ux6lm6jna6"
+path="res://.godot/imported/dont forget homework.mp3-54be807b1b0711bed74ec16b753108f3.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/dont forget homework.mp3"
+dest_files=["res://.godot/imported/dont forget homework.mp3-54be807b1b0711bed74ec16b753108f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

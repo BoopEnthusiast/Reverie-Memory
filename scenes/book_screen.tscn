@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=3 uid="uid://l2yq5kc1dh8n"]
+
+[ext_resource type="Script" path="res://scripts/book_screen.gd" id="1_8k0n7"]
+[ext_resource type="FontFile" uid="uid://b8j367wsg668" path="res://resources/Rm-Regular.otf" id="2_dlywc"]
+[ext_resource type="PackedScene" uid="uid://dm7lx5qxiimjt" path="res://scenes/socket.tscn" id="3_yuvk2"]
+[ext_resource type="PackedScene" uid="uid://ongihxf4wltx" path="res://scenes/draggable_symbol.tscn" id="4_qijxc"]
+
+[node name="Book_Screen" type="ColorRect"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -229.5
+offset_right = 384.0
+offset_bottom = 229.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.984314, 0.941176, 0.898039, 1)
+script = ExtResource("1_8k0n7")
+
+[node name="Exit_Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "X
+"
+
+[node name="CipherQuestion" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -281.0
+offset_top = 36.0
+offset_right = 281.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dlywc")
+theme_override_font_sizes/font_size = 31
+text = "What keeps the doctor away"
+
+[node name="Socket1" parent="." instance=ExtResource("3_yuvk2")]
+layout_mode = 1
+offset_left = -137.0
+offset_right = -97.0
+
+[node name="Socket2" parent="." instance=ExtResource("3_yuvk2")]
+layout_mode = 1
+offset_left = -85.0
+offset_right = -45.0
+
+[node name="Socket3" parent="." instance=ExtResource("3_yuvk2")]
+layout_mode = 1
+offset_left = -31.0
+offset_right = 9.0
+
+[node name="Socket4" parent="." instance=ExtResource("3_yuvk2")]
+layout_mode = 1
+offset_left = 22.0
+offset_right = 62.0
+
+[node name="Socket5" parent="." instance=ExtResource("3_yuvk2")]
+layout_mode = 1
+offset_left = 72.0
+offset_right = 112.0
+
+[node name="DragSymbol1" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = -222.0
+offset_top = -57.5
+offset_right = -165.0
+offset_bottom = -17.5
+symbol = "A"
+
+[node name="DragSymbol2" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = -157.0
+offset_top = 13.5
+offset_right = -100.0
+offset_bottom = 53.5
+symbol = "B"
+
+[node name="DragSymbol3" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = -331.0
+offset_top = 106.5
+offset_right = -274.0
+offset_bottom = 146.5
+symbol = "Z"
+
+[node name="DragSymbol4" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = -48.0
+offset_top = 26.5
+offset_right = 9.0
+offset_bottom = 66.5
+symbol = "Y"
+
+[node name="DragSymbol5" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = -173.0
+offset_top = 114.5
+offset_right = -116.0
+offset_bottom = 154.5
+symbol = "X"
+
+[node name="DragSymbol6" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = -296.0
+offset_top = -27.5
+offset_right = -239.0
+offset_bottom = 12.5
+symbol = "P"
+
+[node name="DragSymbol7" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = 126.0
+offset_top = 70.5
+offset_right = 183.0
+offset_bottom = 110.5
+symbol = "P"
+
+[node name="DragSymbol8" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = 146.0
+offset_top = -2.5
+offset_right = 203.0
+offset_bottom = 37.5
+symbol = "L"
+
+[node name="DragSymbol9" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = 223.0
+offset_top = -73.5
+offset_right = 280.0
+offset_bottom = -33.5
+symbol = "E"
+
+[node name="DragSymbol10" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = -36.5
+offset_right = 65.0
+offset_bottom = 3.5
+symbol = "J"
+
+[node name="DragSymbol11" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 160.5
+offset_right = 68.0
+offset_bottom = 200.5
+symbol = "S"
+
+[node name="DragSymbol12" parent="." instance=ExtResource("4_qijxc")]
+layout_mode = 1
+offset_left = 267.0
+offset_top = 77.5
+offset_right = 324.0
+offset_bottom = 117.5
+symbol = "I"
+
+[connection signal="pressed" from="Exit_Button" to="." method="_on_exit_button_pressed"]

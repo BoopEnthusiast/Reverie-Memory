@@ -39,3 +39,7 @@ func drag_symbol_hovered(which_symbol: DraggableSymbol):
 func drag_symbol_away(which_symbol: DraggableSymbol):
 	if current_drag_symbol == which_symbol:
 		current_drag_symbol = null
+
+
+func _on_exit_button_pressed():
+	visible = false
