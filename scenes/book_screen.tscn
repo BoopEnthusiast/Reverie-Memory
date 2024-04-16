@@ -168,4 +168,17 @@ offset_right = 324.0
 offset_bottom = 117.5
 symbol = "I"
 
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 128.5
+offset_right = 696.0
+offset_bottom = 425.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 71
+text = "You win!!!
+
+More to come soon"
+
 [connection signal="pressed" from="Exit_Button" to="." method="_on_exit_button_pressed"]
