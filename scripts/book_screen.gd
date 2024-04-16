@@ -3,8 +3,9 @@ extends ColorRect
 
 @onready var sockets = [$Socket1, $Socket2, $Socket3, $Socket4, $Socket5]
 @onready var drag_symbols: Array[DraggableSymbol] = [$DragSymbol1, $DragSymbol2, $DragSymbol3, $DragSymbol4, $DragSymbol5, $DragSymbol6, $DragSymbol7, $DragSymbol8, $DragSymbol9, $DragSymbol10, $DragSymbol11, $DragSymbol12]
+@onready var label = $Label
 var current_symbols: Array[String] = ["", "", "", "", ""]
-
+var needed_symbols: Array[String] = ["A", "P", "P", "L", "E"]
 
 
 var current_drag_symbol: DraggableSymbol
@@ -28,7 +29,9 @@ func _input(event: InputEvent):
 			var rect = Rect2(Vector2.ZERO, socket.size)
 			if rect.has_point(pos):
 				current_drag_symbol.global_position = socket.global_position
-				
+				current_symbols[sockets.find(socket)] = current_drag_symbol.symbol
+				if current_symbols == needed_symbols:
+					label.visible = true
 				break
 		current_selected_drag_symbol = null
 
