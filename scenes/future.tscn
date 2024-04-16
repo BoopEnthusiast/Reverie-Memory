@@ -60,7 +60,6 @@ Call mom"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MonitorScreen" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,6 +73,7 @@ color = Color(0, 0.631373, 0.682353, 1)
 script = ExtResource("3_2qq3g")
 
 [node name="PasswordScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,7 +110,6 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="BrowserScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,6 +142,7 @@ offset_right = 465.0
 offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
+bbcode_enabled = true
 text = "
 Secure Connection Failed
 
@@ -153,7 +153,7 @@ Error code: PR_CONNECT_RESET_ERROR
     The page you are trying to view cannot be shown because the authenticity of the received data could not be verified.
     Please contact the web site owners to inform them of this problem.
 
-Please open in your own browser"
+[b]Please open in your own browser[/b]"
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/MonitorScreen/PasswordScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
