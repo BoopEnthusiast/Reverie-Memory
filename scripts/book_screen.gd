@@ -6,6 +6,7 @@ extends ColorRect
 var current_symbols: Array[String] = ["", "", "", "", ""]
 
 
+
 var current_drag_symbol: DraggableSymbol
 var current_selected_drag_symbol: DraggableSymbol
 
@@ -18,7 +19,7 @@ func _ready():
 
 func _input(event: InputEvent):
 	if event is InputEventMouseMotion and current_selected_drag_symbol:
-		current_selected_drag_symbol.global_position = event.global_position - current_selected_drag_symbol.size / 2
+		current_selected_drag_symbol.global_position = get_global_mouse_position() - current_selected_drag_symbol.size / 2
 	elif Input.is_action_just_pressed("click") and current_drag_symbol:
 		current_selected_drag_symbol = current_drag_symbol
 	elif Input.is_action_just_released("click") and current_selected_drag_symbol:

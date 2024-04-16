@@ -23,6 +23,7 @@ SingletonNode="*res://scripts/singleton.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://resources/1x1.png"
 
 [input]

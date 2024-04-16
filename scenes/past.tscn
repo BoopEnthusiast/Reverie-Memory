@@ -76,6 +76,7 @@ grow_horizontal = 1
 layer = 2
 
 [node name="BookScreen" parent="Screens" instance=ExtResource("2_36bpd")]
+visible = true
 
 [node name="StickyNote" type="ColorRect" parent="."]
 layout_mode = 1

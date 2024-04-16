@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=4 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="AudioStream" uid="uid://cav4leymopix0" path="res://resources/sounds/call mom 3.mp3" id="2_pwwtv"]
+[ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
 
 [node name="Future" type="Control"]
 layout_mode = 3
@@ -19,48 +20,6 @@ offset_right = 739.0
 offset_bottom = 390.0
 text = "monitor"
 script = ExtResource("1_6ckpl")
-
-[node name="MonitorScreen" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 51.0
-offset_top = 36.0
-offset_right = -51.0
-offset_bottom = -36.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.631373, 0.682353, 1)
-
-[node name="ExitButton" type="Button" parent="MonitorScreen"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -67.0
-offset_bottom = 67.0
-grow_horizontal = 0
-text = "X"
-
-[node name="PasswordField" type="TextEdit" parent="MonitorScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -166.0
-offset_top = 38.0
-offset_right = 166.0
-offset_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "password"
-context_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_pwwtv")
@@ -98,6 +57,104 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reminder:
 Call mom"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MonitorScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 36.0
+offset_right = -51.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.631373, 0.682353, 1)
+script = ExtResource("3_2qq3g")
+
+[node name="PasswordScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/MonitorScreen/PasswordScreen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 67.0
+grow_horizontal = 0
+text = "X"
+
+[node name="PasswordField" type="TextEdit" parent="CanvasLayer/MonitorScreen/PasswordScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = 38.0
+offset_right = 166.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "password"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="BrowserScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+position = Vector2(0, -38)
+points = PackedVector2Array(0, 102, 1050, 102)
+
+[node name="Label" type="Label" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 20.0
+offset_right = 162.0
+offset_bottom = 43.0
+text = "https://boop.wiki/"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = -146.0
+offset_right = 465.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+Secure Connection Failed
+
+An error occurred during a connection to pornhub.com. PR_CONNECT_RESET_ERROR
+
+Error code: PR_CONNECT_RESET_ERROR
+
+    The page you are trying to view cannot be shown because the authenticity of the received data could not be verified.
+    Please contact the web site owners to inform them of this problem.
+
+Please open in your own browser"
+
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
-[connection signal="pressed" from="MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
-[connection signal="text_changed" from="MonitorScreen/PasswordField" to="Monitor" method="_on_password_field_text_changed"]
+[connection signal="pressed" from="CanvasLayer/MonitorScreen/PasswordScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
+[connection signal="text_changed" from="CanvasLayer/MonitorScreen/PasswordScreen/PasswordField" to="CanvasLayer/MonitorScreen" method="_on_password_changed"]
