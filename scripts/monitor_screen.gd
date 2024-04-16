@@ -21,4 +21,8 @@ func _on_password_changed():
 	if password_field.text == PASSWORD:
 		password_screen.visible = false
 		browser_screen.visible = true
+	else:
+		var char_index = password_field.text.find('\n')
+		if char_index:
+			password_field.text.erase(char_index)
 
