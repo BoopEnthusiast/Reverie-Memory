@@ -60,6 +60,7 @@ Call mom"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MonitorScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -73,7 +74,6 @@ color = Color(0, 0.631373, 0.682353, 1)
 script = ExtResource("3_2qq3g")
 
 [node name="PasswordScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,6 +110,7 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="BrowserScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -121,12 +122,28 @@ grow_vertical = 2
 position = Vector2(0, -38)
 points = PackedVector2Array(0, 102, 1050, 102)
 
+[node name="Line2D2" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+position = Vector2(0, -96.41)
+scale = Vector2(1, 1)
+points = PackedVector2Array(0, 102, 471.22, 102, 1050, 102)
+
+[node name="Line2D4" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+position = Vector2(804.805, -108.3)
+scale = Vector2(1, 1)
+points = PackedVector2Array(240.195, 110.3, 240, 176)
+
+[node name="Line2D3" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+position = Vector2(-235, -113)
+scale = Vector2(1, 1)
+points = PackedVector2Array(240, 114, 240, 176)
+
 [node name="Label" type="Label" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 20.0
-offset_right = 162.0
-offset_bottom = 43.0
+offset_left = 34.0
+offset_top = 12.0
+offset_right = 295.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
 text = "https://boop.wiki/"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
@@ -142,9 +159,11 @@ offset_right = 465.0
 offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 30
 bbcode_enabled = true
 text = "
-Secure Connection Failed
+[i]Secure Connection Failed[/i]
 
 An error occurred during a connection to pornhub.com. PR_CONNECT_RESET_ERROR
 
@@ -155,6 +174,17 @@ Error code: PR_CONNECT_RESET_ERROR
 
 [b]Please open in your own browser[/b]"
 
+[node name="ExitButton" type="Button" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 67.0
+grow_horizontal = 0
+text = "X"
+
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/MonitorScreen/PasswordScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
 [connection signal="text_changed" from="CanvasLayer/MonitorScreen/PasswordScreen/PasswordField" to="CanvasLayer/MonitorScreen" method="_on_password_changed"]
+[connection signal="pressed" from="CanvasLayer/MonitorScreen/BrowserScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
