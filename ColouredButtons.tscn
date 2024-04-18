@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5vnmcy4dln1w"]
+
+[ext_resource type="Script" path="res://scenes/Button.gd" id="1_6oyc7"]
+
+[node name="Button" type="Button"]
+offset_left = 908.0
+offset_top = 24.0
+offset_right = 953.0
+offset_bottom = 70.0
+script = ExtResource("1_6oyc7")
+
+[node name="Red" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.980392, 0.172549, 0.27451, 1)
+
+[node name="Orange" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(1, 0.540046, 0.153233, 1)
+
+[node name="Yellow" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 46.0
+mouse_filter = 2
+color = Color(0.920666, 0.832619, 0.308924, 1)
+
+[node name="Green" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.383131, 0.899275, 0.410037, 1)
+
+[node name="Blue" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 43.0
+offset_bottom = 44.0
+mouse_filter = 2
+color = Color(0.248502, 0.527743, 1, 1)
+
+[node name="Purple" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 1.0
+offset_right = 43.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.720858, 0.344953, 1, 1)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

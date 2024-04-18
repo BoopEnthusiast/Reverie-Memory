@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=8 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
+[ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://ColouredButtons.tscn" id="5_h0vww"]
+[ext_resource type="Script" path="res://scenes/Button Grid.gd" id="5_jn2gl"]
 [ext_resource type="Texture2D" uid="uid://qaowkfvq7jio" path="res://resources/flowers.png" id="6_lamyr"]
 [ext_resource type="AudioStream" uid="uid://cm8ux6lm6jna6" path="res://resources/sounds/dont forget homework.mp3" id="7_434is"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
@@ -109,6 +111,128 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reminder:
 Do your
 homework"
+
+[node name="Button Grid" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 284.0
+offset_top = -264.0
+offset_right = 434.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_jn2gl")
+
+[node name="Button" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 45.0
+offset_bottom = 46.0
+
+[node name="Button2" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.5
+offset_top = 0.0
+offset_right = 22.5
+offset_bottom = 46.0
+grow_horizontal = 2
+
+[node name="Button3" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 46.0
+grow_horizontal = 0
+
+[node name="Button4" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = -23.0
+offset_right = 45.0
+offset_bottom = 23.0
+grow_vertical = 2
+
+[node name="Button5" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -23.0
+offset_right = 22.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button6" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -23.0
+offset_right = 0.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button7" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -46.0
+offset_right = 45.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Button8" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -46.0
+offset_right = 22.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button9" parent="Button Grid" instance=ExtResource("5_h0vww")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -46.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
