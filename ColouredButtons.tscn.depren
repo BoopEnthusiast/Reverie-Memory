@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5vnmcy4dln1w"]
 
-[ext_resource type="Script" path="res://scenes/ColorButton.gd" id="1_rjmof"]
+[ext_resource type="Script" path="res://scenes/ColorButton.gd" id="1_6oyc7"]
 
 [node name="Button" type="Button"]
 offset_left = 908.0
 offset_top = 24.0
 offset_right = 953.0
 offset_bottom = 70.0
-script = ExtResource("1_rjmof")
+script = ExtResource("1_6oyc7")
 
 [node name="Red" type="ColorRect" parent="."]
 visible = false

@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7wrophf506oy"]
+
+[ext_resource type="Script" path="res://scenes/Code.gd" id="1_27w30"]
+
+[node name="Code" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.0
+offset_top = -22.0
+offset_right = -253.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27w30")
+
+[node name="Red1" type="ColorRect" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.980392, 0.172549, 0.27451, 1)
+
+[node name="Green1" type="ColorRect" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.383131, 0.899275, 0.410037, 1)
+
+[node name="Blue1" type="ColorRect" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 43.0
+offset_bottom = 44.0
+mouse_filter = 2
+color = Color(0.248502, 0.527743, 1, 1)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
