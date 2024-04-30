@@ -259,6 +259,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="Button Grid"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -278,9 +279,9 @@ vertical_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="Winner" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

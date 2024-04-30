@@ -11,14 +11,18 @@ func _ready():
 
 
 func color_changed():
-	var is_correct = false
+	var is_correct = true
 	var i = 0
+	
+	print(what_colors_should_be)
 	for button in buttons:
-		if button.CurrentColour == what_colors_should_be[i]:
-			is_correct = true
+		print(button.CurrentColour)
+		if not button.CurrentColour == what_colors_should_be[i]:
+			is_correct = false
 		i += 1
 	if is_correct == true:
-		label.visibility = true
+		label.visible = true
+		SingletonNode.win_buttons()
 	
 	
 

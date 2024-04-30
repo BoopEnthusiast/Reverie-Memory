@@ -13,7 +13,7 @@ signal color_changed
 var CurrentColour = 1
 
 func _on_pressed():
-	
+	print(SingletonNode.has_won_homework)
 	if SingletonNode.has_won_homework:
 		color_changed.emit()
 		

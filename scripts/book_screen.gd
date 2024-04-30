@@ -31,7 +31,7 @@ func _input(event: InputEvent):
 				current_drag_symbol.global_position = socket.global_position
 				current_symbols[sockets.find(socket)] = current_drag_symbol.symbol
 				if current_symbols == needed_symbols:
-					label.visible = true
+					SingletonNode.win_homework()
 				break
 		current_selected_drag_symbol = null
 
