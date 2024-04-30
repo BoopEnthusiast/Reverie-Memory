@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=9 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
+[ext_resource type="Texture2D" uid="uid://ckysxxqepihlc" path="res://resources/future_bg.PNG" id="1_rcr1l"]
 [ext_resource type="Script" path="res://scenes/Black_Light_box.gd" id="2_lt8i0"]
 [ext_resource type="AudioStream" uid="uid://cav4leymopix0" path="res://resources/sounds/call mom 3.mp3" id="2_pwwtv"]
 [ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
@@ -16,12 +17,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="FutureBg" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(574, 324)
+scale = Vector2(0.603704, 0.603704)
+texture = ExtResource("1_rcr1l")
+
 [node name="Monitor" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 307.0
-offset_top = 238.0
-offset_right = 673.0
-offset_bottom = 465.0
+offset_left = 350.0
+offset_top = 185.0
+offset_right = 723.0
+offset_bottom = 394.0
 text = "monitor"
 script = ExtResource("1_6ckpl")
 
