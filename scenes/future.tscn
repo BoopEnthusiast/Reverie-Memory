@@ -87,9 +87,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reminder:
 Call mom"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="MonitorLayer" type="CanvasLayer" parent="."]
 
-[node name="MonitorScreen" type="ColorRect" parent="CanvasLayer"]
+[node name="MonitorScreen" type="ColorRect" parent="MonitorLayer"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,7 +103,7 @@ grow_vertical = 2
 color = Color(0, 0.631373, 0.682353, 1)
 script = ExtResource("3_2qq3g")
 
-[node name="PasswordScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
+[node name="PasswordScreen" type="Control" parent="MonitorLayer/MonitorScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,7 +111,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PasswordField" type="TextEdit" parent="CanvasLayer/MonitorScreen/PasswordScreen"]
+[node name="PasswordField" type="TextEdit" parent="MonitorLayer/MonitorScreen/PasswordScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,7 +129,7 @@ context_menu_enabled = false
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Label" type="Label" parent="CanvasLayer/MonitorScreen/PasswordScreen"]
+[node name="Label" type="Label" parent="MonitorLayer/MonitorScreen/PasswordScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,7 +144,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Hint: Mom's favorite flower"
 
-[node name="Label2" type="Label" parent="CanvasLayer/MonitorScreen/PasswordScreen"]
+[node name="Label2" type="Label" parent="MonitorLayer/MonitorScreen/PasswordScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,7 +159,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Welcome back, user"
 
-[node name="BrowserScreen" type="Control" parent="CanvasLayer/MonitorScreen"]
+[node name="BrowserScreen" type="Control" parent="MonitorLayer/MonitorScreen"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -168,23 +168,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Line2D" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+[node name="Line2D" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
 position = Vector2(0, -38)
 points = PackedVector2Array(0, 102, 1050, 102)
 
-[node name="Line2D2" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+[node name="Line2D2" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
 position = Vector2(0, -96.41)
 points = PackedVector2Array(0, 102, 471.22, 102, 1050, 102)
 
-[node name="Line2D4" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+[node name="Line2D4" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
 position = Vector2(804.805, -108.3)
 points = PackedVector2Array(240.195, 110.3, 240, 176)
 
-[node name="Line2D3" type="Line2D" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+[node name="Line2D3" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
 position = Vector2(-235, -113)
 points = PackedVector2Array(240, 114, 240, 176)
 
-[node name="Label" type="Label" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+[node name="Label" type="Label" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 12.0
@@ -193,7 +193,7 @@ offset_bottom = 54.0
 theme_override_font_sizes/font_size = 30
 text = "https://boop.wiki/"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MonitorScreen/BrowserScreen"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -221,7 +221,7 @@ Error code: PR_CONNECT_RESET_ERROR
 
 [b]Please open in browser on your own computer[/b]"
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/MonitorScreen"]
+[node name="ExitButton" type="Button" parent="MonitorLayer/MonitorScreen"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -231,9 +231,11 @@ offset_bottom = 67.0
 grow_horizontal = 0
 text = "X"
 
-[node name="Box_closeup" type="ColorRect" parent="."]
+[node name="BoxLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Box_closeup" type="ColorRect" parent="BoxLayer"]
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -248,7 +250,7 @@ grow_vertical = 2
 color = Color(0.333333, 0.360784, 0.439216, 1)
 script = ExtResource("5_xtys4")
 
-[node name="ExitButton2" type="Button" parent="Box_closeup"]
+[node name="ExitButton2" type="Button" parent="BoxLayer/Box_closeup"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -260,13 +262,13 @@ offset_bottom = 33.0
 grow_horizontal = 0
 text = "X"
 
-[node name="cod line" type="Control" parent="Box_closeup"]
+[node name="cod line" type="Control" parent="BoxLayer/Box_closeup"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_sw8h6")
 
-[node name="Code" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -280,7 +282,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code2" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code2" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -294,7 +296,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code3" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code3" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -308,7 +310,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code4" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code4" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -322,7 +324,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code5" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code5" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -336,7 +338,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code6" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code6" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -350,7 +352,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code7" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code7" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -364,7 +366,7 @@ offset_bottom = 155.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code8" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code8" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -378,7 +380,7 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code9" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code9" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -392,7 +394,7 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code10" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code10" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -406,7 +408,7 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code11" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code11" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -420,7 +422,7 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code12" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code12" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -434,7 +436,7 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code13" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code13" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -448,7 +450,7 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Code14" parent="Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
+[node name="Code14" parent="BoxLayer/Box_closeup/cod line" instance=ExtResource("6_tk1gx")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -461,9 +463,125 @@ offset_right = 585.0
 offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="PictureFrame" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -161.0
+offset_right = 174.0
+offset_bottom = -37.0
+grow_vertical = 0
+rotation = -0.122214
+
+[node name="Four" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 0, 1)
+
+[node name="Six" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(1, 0, 1, 1)
+
+[node name="Three" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+color = Color(1, 1, 0, 1)
+
+[node name="Three2" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Five" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="One" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Two" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+color = Color(1, 0.596078, 0, 1)
+
+[node name="Four2" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 1, 0, 1)
+
+[node name="Four3" type="ColorRect" parent="PictureFrame"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 1, 0, 1)
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
-[connection signal="pressed" from="Black_Light_box" to="Box_closeup" method="_on_black_light_box_pressed"]
-[connection signal="text_changed" from="CanvasLayer/MonitorScreen/PasswordScreen/PasswordField" to="CanvasLayer/MonitorScreen" method="_on_password_changed"]
-[connection signal="pressed" from="CanvasLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
-[connection signal="pressed" from="Box_closeup/ExitButton2" to="Box_closeup" method="_on_exit_button_2_pressed"]
+[connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
+[connection signal="text_changed" from="MonitorLayer/MonitorScreen/PasswordScreen/PasswordField" to="MonitorLayer/MonitorScreen" method="_on_password_changed"]
+[connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
+[connection signal="pressed" from="BoxLayer/Box_closeup/ExitButton2" to="BoxLayer/Box_closeup" method="_on_exit_button_2_pressed"]
