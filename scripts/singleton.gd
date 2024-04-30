@@ -8,8 +8,9 @@ var past_winning_label: Label
 var has_won_buttons := false
 var has_won_homework := false
 
-
+var sticky_note_label: ColorRect
 func win_homework() -> void:
+	sticky_note_label.visible = false
 	if has_won_buttons:
 		past_winning_label.visible = true
 	has_won_homework = true
