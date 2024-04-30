@@ -18,6 +18,7 @@ script = ExtResource("1_27w30")
 
 [node name="Red1" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 44.0
@@ -27,6 +28,7 @@ color = Color(0.980392, 0.172549, 0.27451, 1)
 
 [node name="Green1" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 44.0
@@ -36,6 +38,7 @@ color = Color(0.383131, 0.899275, 0.410037, 1)
 
 [node name="Blue1" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 43.0

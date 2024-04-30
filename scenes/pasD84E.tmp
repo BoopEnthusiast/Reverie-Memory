@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=10 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://cggyvosc724v6" path="res://resources/past_bg.PNG" id="1_npihb"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
@@ -18,8 +18,6 @@ script/source = "extends Button
 func _on_pressed():
 	book_screen.visible = true
 "
-
-[sub_resource type="Theme" id="Theme_scsgd"]
 
 [sub_resource type="GDScript" id="GDScript_23jo2"]
 script/source = "extends Label
@@ -47,7 +45,6 @@ scale = Vector2(0.599685, 0.599685)
 texture = ExtResource("1_npihb")
 
 [node name="Book" type="Button" parent="."]
-modulate = Color(0.878431, 0.301961, 0.184314, 1)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -85,7 +82,7 @@ stream = ExtResource("7_434is")
 autoplay = true
 
 [node name="Door" parent="." instance=ExtResource("8_8rlnr")]
-modulate = Color(1, 1, 1, 0)
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_left = 0.0
@@ -95,7 +92,6 @@ offset_top = -187.0
 offset_right = 684.0
 offset_bottom = 188.0
 grow_horizontal = 1
-theme = SubResource("Theme_scsgd")
 text = ""
 
 [node name="Screens" type="CanvasLayer" parent="."]
