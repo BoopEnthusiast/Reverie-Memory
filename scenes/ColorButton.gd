@@ -14,61 +14,62 @@ var CurrentColour = 1
 
 func _on_pressed():
 	
-	color_changed.emit()
-	
-	if CurrentColour == 1:
-		red.visible = true
-		orange.visible = false
-		yellow.visible = false
-		green.visible = false
-		blue.visible = false
-		purple.visible = false
-		CurrentColour = 2
-	
-	else: if CurrentColour == 2:
-		red.visible = false
-		orange.visible = true
-		yellow.visible = false
-		green.visible = false
-		blue.visible = false
-		purple.visible = false
-		CurrentColour = 3
-	
-	else: if CurrentColour == 3:
-		red.visible = false
-		orange.visible = false
-		yellow.visible = true
-		green.visible = false
-		blue.visible = false
-		purple.visible = false
-		CurrentColour = 4
+	if SingletonNode.has_won_homework:
+		color_changed.emit()
 		
-	else: if CurrentColour == 4:
-		red.visible = false
-		orange.visible = false
-		yellow.visible = false
-		green.visible = true
-		blue.visible = false
-		purple.visible = false
-		CurrentColour = 5
-	
-	else: if CurrentColour == 5:
-		red.visible = false
-		orange.visible = false
-		yellow.visible = false
-		green.visible = false
-		blue.visible = true
-		purple.visible = false
-		CurrentColour = 6
-	
-	else: if CurrentColour == 6:
-		red.visible = false
-		orange.visible = true
-		yellow.visible = false
-		green.visible = false
-		blue.visible = false
-		purple.visible = true
-		CurrentColour = 1
+		if CurrentColour == 1:
+			red.visible = true
+			orange.visible = false
+			yellow.visible = false
+			green.visible = false
+			blue.visible = false
+			purple.visible = false
+			CurrentColour = 2
+		
+		else: if CurrentColour == 2:
+			red.visible = false
+			orange.visible = true
+			yellow.visible = false
+			green.visible = false
+			blue.visible = false
+			purple.visible = false
+			CurrentColour = 3
+		
+		else: if CurrentColour == 3:
+			red.visible = false
+			orange.visible = false
+			yellow.visible = true
+			green.visible = false
+			blue.visible = false
+			purple.visible = false
+			CurrentColour = 4
+			
+		else: if CurrentColour == 4:
+			red.visible = false
+			orange.visible = false
+			yellow.visible = false
+			green.visible = true
+			blue.visible = false
+			purple.visible = false
+			CurrentColour = 5
+		
+		else: if CurrentColour == 5:
+			red.visible = false
+			orange.visible = false
+			yellow.visible = false
+			green.visible = false
+			blue.visible = true
+			purple.visible = false
+			CurrentColour = 6
+		
+		else: if CurrentColour == 6:
+			red.visible = false
+			orange.visible = true
+			yellow.visible = false
+			green.visible = false
+			blue.visible = false
+			purple.visible = true
+			CurrentColour = 1
 
 
 # Called when the node enters the scene tree for the first time.
