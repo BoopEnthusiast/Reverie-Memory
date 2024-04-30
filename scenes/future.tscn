@@ -219,7 +219,7 @@ Error code: PR_CONNECT_RESET_ERROR
     The page you are trying to view cannot be shown because the authenticity of the received data could not be verified.
     Please contact the web site owners to inform them of this problem.
 
-[b]Please open in browser on your own computer[/b]"
+[b]Please open website in browser on another device[/b]"
 
 [node name="ExitButton" type="Button" parent="MonitorLayer/MonitorScreen"]
 layout_mode = 1
