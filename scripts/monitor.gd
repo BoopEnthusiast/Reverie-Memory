@@ -1,6 +1,6 @@
 extends Button
 
-@onready var monitor_screen = $"../CanvasLayer/MonitorScreen"
+@onready var monitor_screen = $"../MonitorLayer/MonitorScreen"
 
 
 func _on_pressed():

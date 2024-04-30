@@ -212,7 +212,7 @@ bbcode_enabled = true
 text = "
 [i]Secure Connection Failed[/i]
 
-An error occurred during a connection to pornhub.com. PR_CONNECT_RESET_ERROR
+An error occurred during a connection to boop.wiki. PR_CONNECT_RESET_ERROR
 
 Error code: PR_CONNECT_RESET_ERROR
 
