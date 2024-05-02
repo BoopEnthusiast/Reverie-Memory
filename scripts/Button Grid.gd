@@ -19,6 +19,7 @@ func color_changed():
 		print(button.current_color)
 		if not button.current_color == what_colors_should_be[i]:
 			is_correct = false
+			
 		i += 1
 	if is_correct == true:
 		label.visible = true
