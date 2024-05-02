@@ -36,8 +36,8 @@ grow_vertical = 2
 layer = -1
 
 [node name="Start" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(569, 329)
-scale = Vector2(0.612963, 0.612963)
+position = Vector2(572, 322)
+scale = Vector2(0.605555, 0.605555)
 texture = ExtResource("1_kw83a")
 
 [node name="FutureButton" type="Button" parent="."]
@@ -73,17 +73,30 @@ theme_override_font_sizes/font_size = 66
 text = "Past"
 script = SubResource("GDScript_c0e27")
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = -56.0
+offset_right = 430.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Rules" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -241.0
-offset_right = 20.0
-offset_bottom = -218.0
+offset_left = -424.5
+offset_top = -25.0
+offset_right = 424.5
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
