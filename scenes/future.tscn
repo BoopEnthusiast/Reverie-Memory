@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=23 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://ckysxxqepihlc" path="res://resources/future_bg.PNG" id="1_rcr1l"]
@@ -6,8 +6,98 @@
 [ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
 [ext_resource type="Script" path="res://scripts/Black_Light_box.gd" id="3_4486u"]
 [ext_resource type="Script" path="res://scripts/Box_closeup.gd" id="5_xtys4"]
+[ext_resource type="Texture2D" uid="uid://b8menc1v7exnu" path="res://resources/piano cat.png" id="6_jg1yv"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plxp6"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t01ja"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4utfr"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lwrd"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(960, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcpjc"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(1280, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff2ur"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(0, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42exm"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(320, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njc5i"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(640, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hf55"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(960, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8f5x"]
+atlas = ExtResource("6_jg1yv")
+region = Rect2(1280, 240, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtclf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plxp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t01ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4utfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lwrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcpjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff2ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42exm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njc5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hf55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8f5x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_byjt4"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	play()
+"
 
 [node name="Future" type="Control"]
 layout_mode = 3
@@ -159,7 +249,17 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Welcome back, user"
 
-[node name="BrowserScreen" type="Control" parent="MonitorLayer/MonitorScreen"]
+[node name="ExitButton" type="Button" parent="MonitorLayer/MonitorScreen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 67.0
+grow_horizontal = 0
+text = "X"
+
+[node name="Browser" type="TabContainer" parent="MonitorLayer/MonitorScreen"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -167,33 +267,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jbqql")
 
-[node name="Line2D" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
-position = Vector2(0, -38)
+[node name="Translation Site" type="TabBar" parent="MonitorLayer/MonitorScreen/Browser"]
+layout_mode = 2
+
+[node name="Line2D" type="Line2D" parent="MonitorLayer/MonitorScreen/Browser/Translation Site"]
+position = Vector2(0, -54)
 points = PackedVector2Array(0, 102, 1050, 102)
 
-[node name="Line2D2" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
-position = Vector2(0, -96.41)
-points = PackedVector2Array(0, 102, 471.22, 102, 1050, 102)
-
-[node name="Line2D4" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
-position = Vector2(804.805, -108.3)
-points = PackedVector2Array(240.195, 110.3, 240, 176)
-
-[node name="Line2D3" type="Line2D" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
-position = Vector2(-235, -113)
-points = PackedVector2Array(240, 114, 240, 176)
-
-[node name="Label" type="Label" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 12.0
-offset_right = 295.0
-offset_bottom = 54.0
+[node name="Label" type="Label" parent="MonitorLayer/MonitorScreen/Browser/Translation Site"]
+layout_mode = 1
+offset_right = 261.0
+offset_bottom = 42.0
 theme_override_font_sizes/font_size = 30
 text = "https://boop.wiki/"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MonitorLayer/MonitorScreen/BrowserScreen"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MonitorLayer/MonitorScreen/Browser/Translation Site"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -221,15 +311,16 @@ Error code: PR_CONNECT_RESET_ERROR
 
 [b]Please open website in browser on another device[/b]"
 
-[node name="ExitButton" type="Button" parent="MonitorLayer/MonitorScreen"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -67.0
-offset_bottom = 67.0
-grow_horizontal = 0
-text = "X"
+[node name="Genuinely Useless (but cute) Site" type="TabBar" parent="MonitorLayer/MonitorScreen/Browser"]
+visible = false
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MonitorLayer/MonitorScreen/Browser/Genuinely Useless (but cute) Site"]
+position = Vector2(529, 268.5)
+scale = Vector2(2.12083, 2.12083)
+sprite_frames = SubResource("SpriteFrames_qtclf")
+frame_progress = 0.0475292
+script = SubResource("GDScript_byjt4")
 
 [node name="BoxLayer" type="CanvasLayer" parent="."]
 layer = 2

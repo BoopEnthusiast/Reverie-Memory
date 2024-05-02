@@ -4,7 +4,7 @@ const PASSWORD = "sunflower"
 
 @onready var password_field = $PasswordScreen/PasswordField
 @onready var password_screen = $PasswordScreen
-@onready var browser_screen = $BrowserScreen
+@onready var browser_screen = $Browser
 
 
 func _on_password_changed():
