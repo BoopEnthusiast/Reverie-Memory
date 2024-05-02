@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://68wn1ck2k6wc"]
+[gd_scene load_steps=5 format=3 uid="uid://68wn1ck2k6wc"]
 
 [ext_resource type="Script" path="res://scripts/cursor_trail.gd" id="1_g3ba8"]
 [ext_resource type="Texture2D" uid="uid://casp74mq0xrye" path="res://resources/white_circle.svg" id="2_t5j2u"]
@@ -8,6 +8,10 @@ _data = [Vector2(0, 1), 0.0, -0.356319, 0, 0, Vector2(0.3, 0.5), -1.35579, -1.35
 point_count = 3
 metadata/_snap_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_lg3xq"]
+interpolation_color_space = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 5
 
@@ -16,8 +20,12 @@ z_index = 20
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 width = 20.0
 width_curve = SubResource("Curve_02d0c")
+gradient = SubResource("Gradient_lg3xq")
 joint_mode = 2
 begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 100.0
+round_precision = 32
 antialiased = true
 script = ExtResource("1_g3ba8")
 
