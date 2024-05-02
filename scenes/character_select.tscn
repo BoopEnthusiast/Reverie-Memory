@@ -36,8 +36,8 @@ grow_vertical = 2
 layer = -1
 
 [node name="Start" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(572, 322)
-scale = Vector2(0.605555, 0.605555)
+position = Vector2(576.445, 324.5)
+scale = Vector2(0.600926, 0.600926)
 texture = ExtResource("1_kw83a")
 
 [node name="FutureButton" type="Button" parent="."]
