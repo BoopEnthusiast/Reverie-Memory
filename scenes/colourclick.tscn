@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7wrophf506oy"]
 
-[ext_resource type="Script" path="res://scenes/Code.gd" id="1_27w30"]
+[ext_resource type="Script" path="res://scripts/Code.gd" id="1_py14s"]
 
 [node name="Code" type="Button"]
 anchors_preset = 8
@@ -14,7 +14,7 @@ offset_right = -253.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_27w30")
+script = ExtResource("1_py14s")
 
 [node name="Red1" type="ColorRect" parent="."]
 visible = false

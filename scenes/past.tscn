@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cggyvosc724v6" path="res://resources/past_bg.PNG" id="1_npihb"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
-[ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://ColouredButtons.tscn" id="5_h0vww"]
-[ext_resource type="Script" path="res://scenes/Button Grid.gd" id="5_jn2gl"]
 [ext_resource type="Script" path="res://scripts/StickyNote.gd" id="6_ckslb"]
 [ext_resource type="Texture2D" uid="uid://qaowkfvq7jio" path="res://resources/flowers.png" id="6_lamyr"]
 [ext_resource type="AudioStream" uid="uid://cm8ux6lm6jna6" path="res://resources/sounds/dont forget homework.mp3" id="7_434is"]
+[ext_resource type="Script" path="res://scripts/Button Grid.gd" id="7_kydrd"]
+[ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://scenes/ColouredButtons.tscn" id="8_8a5px"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
@@ -153,16 +153,16 @@ offset_right = 434.0
 offset_bottom = -114.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_jn2gl")
+script = ExtResource("7_kydrd")
 
-[node name="Button" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 45.0
 offset_bottom = 46.0
 
-[node name="Button2" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button2" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -173,7 +173,7 @@ offset_right = 22.5
 offset_bottom = 46.0
 grow_horizontal = 2
 
-[node name="Button3" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button3" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -184,7 +184,7 @@ offset_right = 0.0
 offset_bottom = 46.0
 grow_horizontal = 0
 
-[node name="Button4" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button4" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -195,7 +195,7 @@ offset_right = 45.0
 offset_bottom = 23.0
 grow_vertical = 2
 
-[node name="Button5" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button5" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -209,7 +209,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button6" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button6" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -223,7 +223,7 @@ offset_bottom = 23.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Button7" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button7" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -234,7 +234,7 @@ offset_right = 45.0
 offset_bottom = 0.0
 grow_vertical = 0
 
-[node name="Button8" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button8" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -248,7 +248,7 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button9" parent="Button Grid" instance=ExtResource("5_h0vww")]
+[node name="Button9" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

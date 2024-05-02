@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://ckysxxqepihlc" path="res://resources/future_bg.PNG" id="1_rcr1l"]
-[ext_resource type="Script" path="res://scenes/Black_Light_box.gd" id="2_lt8i0"]
 [ext_resource type="AudioStream" uid="uid://cav4leymopix0" path="res://resources/sounds/call mom 3.mp3" id="2_pwwtv"]
 [ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
+[ext_resource type="Script" path="res://scripts/Black_Light_box.gd" id="3_4486u"]
 [ext_resource type="Script" path="res://scripts/Box_closeup.gd" id="5_xtys4"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
@@ -48,8 +48,8 @@ offset_right = -155.0
 offset_bottom = -118.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Mistery box"
-script = ExtResource("2_lt8i0")
+text = "Mystery box"
+script = ExtResource("3_4486u")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_pwwtv")
