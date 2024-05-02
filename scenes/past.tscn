@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=13 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://cggyvosc724v6" path="res://resources/past_bg.PNG" id="1_npihb"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/Button Grid.gd" id="7_kydrd"]
 [ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://scenes/ColouredButtons.tscn" id="8_8a5px"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
+[ext_resource type="Script" path="res://scenes/Lights.gd" id="9_bjspo"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
 resource_name = "Book"
@@ -299,6 +300,55 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You win!!!!"
 script = SubResource("GDScript_23jo2")
+
+[node name="Lights" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_bjspo")
+
+[node name="ColorRect" type="ColorRect" parent="Lights"]
+visible = false
+layout_mode = 0
+offset_left = 473.0
+offset_top = 21.0
+offset_right = 500.0
+offset_bottom = 47.0
+
+[node name="ColorRect2" type="ColorRect" parent="Lights"]
+visible = false
+offset_left = 427.0
+offset_top = 19.0
+offset_right = 455.0
+offset_bottom = 47.0
+
+[node name="ColorRect3" type="ColorRect" parent="Lights"]
+visible = false
+offset_left = 379.0
+offset_top = 20.0
+offset_right = 408.0
+offset_bottom = 47.0
+
+[node name="ColorRect4" type="ColorRect" parent="Lights"]
+visible = false
+offset_left = 333.0
+offset_top = 20.0
+offset_right = 361.0
+offset_bottom = 46.0
+
+[node name="ColorRect5" type="ColorRect" parent="Lights"]
+visible = false
+offset_left = 285.0
+offset_top = 20.0
+offset_right = 311.0
+offset_bottom = 45.0
+
+[node name="ColorRect6" type="ColorRect" parent="Lights"]
+visible = false
+offset_left = 518.0
+offset_top = 21.0
+offset_right = 545.0
+offset_bottom = 48.0
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
