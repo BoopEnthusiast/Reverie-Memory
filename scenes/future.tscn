@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b8menc1v7exnu" path="res://resources/piano cat.png" id="6_jg1yv"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
-[ext_resource type="Texture2D" uid="uid://cbq3c0n4l7yqc" path="res://resources/bg_fut_black.PNG" id="10_0r66b"]
+[ext_resource type="Texture2D" uid="uid://b2jhjnuyfdndo" path="res://resources/NUMS.PNG" id="10_cblqr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
 
@@ -680,10 +680,10 @@ color = Color(0, 1, 0, 1)
 layer = -1
 visible = false
 
-[node name="BgFutBlack" type="Sprite2D" parent="Black_light_bg"]
-position = Vector2(578, 325)
+[node name="Nums" type="Sprite2D" parent="Black_light_bg"]
+position = Vector2(576, 327)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("10_0r66b")
+texture = ExtResource("10_cblqr")
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]

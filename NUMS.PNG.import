@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbq3c0n4l7yqc"
-path="res://.godot/imported/bg_fut_black.PNG-af07ec10f854de190fd65fa3b373965f.ctex"
+uid="uid://brncftyhji6ew"
+path="res://.godot/imported/NUMS.PNG-4df4c71ec1937e37c57533ab3c649b34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/bg_fut_black.PNG"
-dest_files=["res://.godot/imported/bg_fut_black.PNG-af07ec10f854de190fd65fa3b373965f.ctex"]
+source_file="res://NUMS.PNG"
+dest_files=["res://.godot/imported/NUMS.PNG-4df4c71ec1937e37c57533ab3c649b34.ctex"]
 
 [params]
 
