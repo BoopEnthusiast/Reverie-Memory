@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=25 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_ao5pu"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
 [ext_resource type="Script" path="res://scenes/NoteBook.gd" id="10_4dff4"]
 [ext_resource type="Script" path="res://scenes/NoteScreen.gd" id="11_p0scv"]
-[ext_resource type="PackedScene" uid="uid://fc0mq35dotpr" path="res://scenes/blacklight_code.tscn" id="12_3t3yx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
 
@@ -184,9 +183,9 @@ text = "Reminder:
 Call mom"
 
 [node name="MonitorLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MonitorScreen" type="ColorRect" parent="MonitorLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -699,11 +698,6 @@ offset_top = 35.0
 offset_right = 274.0
 offset_bottom = 245.0
 script = ExtResource("11_p0scv")
-
-[node name="BlacklightCode" parent="." instance=ExtResource("12_3t3yx")]
-visible = false
-position = Vector2(565, 268)
-scale = Vector2(0.578368, 0.578368)
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
