@@ -184,9 +184,9 @@ text = "Reminder:
 Call mom"
 
 [node name="MonitorLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MonitorScreen" type="ColorRect" parent="MonitorLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -705,5 +705,6 @@ script = ExtResource("11_p0scv")
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
 [connection signal="text_changed" from="MonitorLayer/MonitorScreen/PasswordScreen/PasswordField" to="MonitorLayer/MonitorScreen" method="_on_password_changed"]
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
+[connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="MonitorLayer/MonitorScreen/ExitButton" method="_on_pressed"]
 [connection signal="pressed" from="BoxLayer/Box_closeup/ExitButton2" to="BoxLayer/Box_closeup" method="_on_exit_button_2_pressed"]
 [connection signal="pressed" from="NoteBook" to="NoteBook" method="_on_pressed"]
