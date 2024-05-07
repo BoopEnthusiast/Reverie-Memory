@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://byiwg4wsetanr"]
 
-[ext_resource type="Texture2D" uid="uid://cggyvosc724v6" path="res://resources/past_bg.PNG" id="1_npihb"]
+[ext_resource type="Texture2D" uid="uid://dasbal0142kjs" path="res://resources/bg_past.PNG" id="1_n4si2"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
 [ext_resource type="Script" path="res://scripts/StickyNote.gd" id="6_ckslb"]
-[ext_resource type="Texture2D" uid="uid://qaowkfvq7jio" path="res://resources/flowers.png" id="6_lamyr"]
+[ext_resource type="Texture2D" uid="uid://yrfrit7yu0e8" path="res://resources/cover_img.PNG" id="7_81tky"]
 [ext_resource type="AudioStream" uid="uid://cm8ux6lm6jna6" path="res://resources/sounds/dont forget homework.mp3" id="7_434is"]
 [ext_resource type="Script" path="res://scripts/Button Grid.gd" id="7_kydrd"]
 [ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://scenes/ColouredButtons.tscn" id="8_8a5px"]
@@ -42,44 +42,65 @@ grow_vertical = 2
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="PastBg" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(576.035, 326.2)
-scale = Vector2(0.599685, 0.599685)
-texture = ExtResource("1_npihb")
+[node name="BgPast" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(577, 327)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_n4si2")
 
-[node name="Book" type="Button" parent="."]
-modulate = Color(0.878431, 0.301961, 0.184314, 1)
-layout_mode = 1
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="StickyNote" type="ColorRect" parent="CanvasLayer3"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -202.0
-offset_right = -31.0
-offset_bottom = -77.0
+offset_left = -139.0
+offset_top = -253.0
+offset_right = -84.0
+offset_bottom = -207.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "BOOK
-"
-script = SubResource("GDScript_y21dh")
+color = Color(1, 1, 0, 1)
+script = ExtResource("6_ckslb")
 
-[node name="Sunflowers" type="TextureRect" parent="."]
+[node name="Label" type="Label" parent="CanvasLayer3/StickyNote"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 153.47
-offset_top = -86.955
-offset_right = 859.47
-offset_bottom = 1416.05
+offset_left = -26.5
+offset_top = -25.0
+offset_right = 26.5
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_lamyr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Reminder:
+Do your
+homework"
+
+[node name="Book" type="Button" parent="."]
+modulate = Color(0.878431, 0.301961, 0.184314, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -270.0
+offset_right = -85.0
+offset_bottom = -186.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "BOOK
+"
+script = SubResource("GDScript_y21dh")
 
 [node name="HomeworkReminder" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_434is")
@@ -99,42 +120,6 @@ grow_horizontal = 1
 theme = SubResource("Theme_scsgd")
 text = ""
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="StickyNote" type="ColorRect" parent="CanvasLayer3"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -275.0
-offset_top = -557.0
-offset_right = -161.0
-offset_bottom = -463.0
-grow_horizontal = 0
-grow_vertical = 0
-color = Color(1, 1, 0, 1)
-script = ExtResource("6_ckslb")
-
-[node name="Label" type="Label" parent="CanvasLayer3/StickyNote"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Reminder:
-Do your
-homework"
-
 [node name="Screens" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -147,13 +132,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 284.0
-offset_top = -264.0
-offset_right = 434.0
-offset_bottom = -114.0
+offset_left = 294.0
+offset_top = -238.0
+offset_right = 444.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_kydrd")
+
+[node name="CoverImg" type="Sprite2D" parent="Button Grid"]
+position = Vector2(-296, 242)
+scale = Vector2(0.605555, 0.605556)
+texture = ExtResource("7_81tky")
 
 [node name="Button" parent="Button Grid" instance=ExtResource("8_8a5px")]
 layout_mode = 1
