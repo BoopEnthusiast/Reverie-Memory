@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=25 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://ckysxxqepihlc" path="res://resources/future_bg.PNG" id="1_rcr1l"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b8menc1v7exnu" path="res://resources/piano cat.png" id="6_jg1yv"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
+[ext_resource type="Script" path="res://scenes/NoteBook.gd" id="10_4dff4"]
+[ext_resource type="Script" path="res://scenes/NoteScreen.gd" id="11_p0scv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
 
@@ -679,9 +681,21 @@ offset_right = 321.0
 offset_bottom = 596.0
 text = "Note
 Book"
+script = ExtResource("10_4dff4")
+
+[node name="Notebook Layer" type="CanvasLayer" parent="."]
+
+[node name="NoteScreen" type="ColorRect" parent="Notebook Layer"]
+visible = false
+offset_left = 36.0
+offset_top = 35.0
+offset_right = 274.0
+offset_bottom = 245.0
+script = ExtResource("11_p0scv")
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
 [connection signal="text_changed" from="MonitorLayer/MonitorScreen/PasswordScreen/PasswordField" to="MonitorLayer/MonitorScreen" method="_on_password_changed"]
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
 [connection signal="pressed" from="BoxLayer/Box_closeup/ExitButton2" to="BoxLayer/Box_closeup" method="_on_exit_button_2_pressed"]
+[connection signal="pressed" from="NoteBook" to="NoteBook" method="_on_pressed"]
