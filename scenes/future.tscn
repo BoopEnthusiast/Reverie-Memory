@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=26 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
-[ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_smwi7"]
+[ext_resource type="Texture2D" path="res://resources/future_bg.PNG" id="1_rcr1l"]
 [ext_resource type="AudioStream" uid="uid://cav4leymopix0" path="res://resources/sounds/call mom 3.mp3" id="2_pwwtv"]
 [ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
 [ext_resource type="Script" path="res://scripts/Black_Light_box.gd" id="3_4486u"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b8menc1v7exnu" path="res://resources/piano cat.png" id="6_jg1yv"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
-[ext_resource type="Texture2D" uid="uid://b2jhjnuyfdndo" path="res://resources/NUMS.PNG" id="10_cblqr"]
+[ext_resource type="Script" path="res://scenes/NoteBook.gd" id="10_4dff4"]
+[ext_resource type="Script" path="res://scenes/NoteScreen.gd" id="11_p0scv"]
+[ext_resource type="PackedScene" uid="uid://fc0mq35dotpr" path="res://scenes/blacklight_code.tscn" id="12_3t3yx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
 
@@ -108,13 +110,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="BgFutNolight" type="Sprite2D" parent="BG"]
-position = Vector2(578, 325)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_smwi7")
+[node name="FutureBg" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(574, 324)
+scale = Vector2(0.603704, 0.603704)
+texture = ExtResource("1_rcr1l")
 
 [node name="Monitor" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -127,20 +129,18 @@ text = "monitor"
 script = ExtResource("1_6ckpl")
 
 [node name="Black_Light_box" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -241.0
-offset_top = -265.0
-offset_right = -27.0
-offset_bottom = -148.0
+offset_left = -333.0
+offset_top = -194.0
+offset_right = -155.0
+offset_bottom = -118.0
 grow_horizontal = 0
 grow_vertical = 0
-rotation = 0.566924
 text = "Mystery box"
 script = ExtResource("3_4486u")
 
@@ -149,7 +149,6 @@ stream = ExtResource("2_pwwtv")
 autoplay = true
 
 [node name="StickyNote" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -560,7 +559,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PictureFrame" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -676,17 +674,34 @@ grow_horizontal = 0
 grow_vertical = 0
 color = Color(0, 1, 0, 1)
 
-[node name="Black_light_bg" type="CanvasLayer" parent="."]
-layer = -1
-visible = false
+[node name="NoteBook" type="Button" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 490.0
+offset_right = 321.0
+offset_bottom = 596.0
+text = "Note
+Book"
+script = ExtResource("10_4dff4")
 
-[node name="Nums" type="Sprite2D" parent="Black_light_bg"]
-position = Vector2(576, 327)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("10_cblqr")
+[node name="Notebook Layer" type="CanvasLayer" parent="."]
+
+[node name="NoteScreen" type="ColorRect" parent="Notebook Layer"]
+visible = false
+offset_left = 36.0
+offset_top = 35.0
+offset_right = 274.0
+offset_bottom = 245.0
+script = ExtResource("11_p0scv")
+
+[node name="BlacklightCode" parent="." instance=ExtResource("12_3t3yx")]
+visible = false
+position = Vector2(565, 268)
+scale = Vector2(0.578368, 0.578368)
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
 [connection signal="text_changed" from="MonitorLayer/MonitorScreen/PasswordScreen/PasswordField" to="MonitorLayer/MonitorScreen" method="_on_password_changed"]
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
 [connection signal="pressed" from="BoxLayer/Box_closeup/ExitButton2" to="BoxLayer/Box_closeup" method="_on_exit_button_2_pressed"]
+[connection signal="pressed" from="NoteBook" to="NoteBook" method="_on_pressed"]
