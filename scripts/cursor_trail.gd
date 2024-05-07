@@ -1,7 +1,6 @@
 extends Line2D
 
 @onready var dot = $Dot
-@onready var timer = $Timer
 
 var point_count: int
 
