@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=26 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_ao5pu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
 [ext_resource type="Script" path="res://scripts/Black_Light_box.gd" id="3_4486u"]
 [ext_resource type="Script" path="res://scripts/Box_closeup.gd" id="5_xtys4"]
+[ext_resource type="Script" path="res://scripts/ExitButton.gd" id="6_0yq6i"]
 [ext_resource type="Texture2D" uid="uid://b8menc1v7exnu" path="res://resources/piano cat.png" id="6_jg1yv"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
@@ -263,6 +264,7 @@ offset_left = -67.0
 offset_bottom = 67.0
 grow_horizontal = 0
 text = "X"
+script = ExtResource("6_0yq6i")
 
 [node name="Browser" type="TabContainer" parent="MonitorLayer/MonitorScreen"]
 visible = false
