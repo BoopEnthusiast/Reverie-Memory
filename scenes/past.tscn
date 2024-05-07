@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=13 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://dasbal0142kjs" path="res://resources/bg_past.PNG" id="1_n4si2"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
+[ext_resource type="Texture2D" uid="uid://c4x5ao37yfg1x" path="res://resources/boxlock.PNG" id="2_s1lig"]
 [ext_resource type="Script" path="res://scripts/StickyNote.gd" id="6_ckslb"]
 [ext_resource type="Texture2D" uid="uid://yrfrit7yu0e8" path="res://resources/cover_img.PNG" id="7_81tky"]
 [ext_resource type="AudioStream" uid="uid://cm8ux6lm6jna6" path="res://resources/sounds/dont forget homework.mp3" id="7_434is"]
@@ -46,6 +47,11 @@ layer = -1
 position = Vector2(577, 327)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_n4si2")
+
+[node name="Boxlock" type="Sprite2D" parent="BG"]
+position = Vector2(574, 335)
+scale = Vector2(0.603704, 0.603704)
+texture = ExtResource("2_s1lig")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 2
