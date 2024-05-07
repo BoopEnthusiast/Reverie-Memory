@@ -39,10 +39,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="BG" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="BgPast" type="Sprite2D" parent="CanvasLayer2"]
+[node name="BgPast" type="Sprite2D" parent="BG"]
 position = Vector2(577, 327)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_n4si2")
