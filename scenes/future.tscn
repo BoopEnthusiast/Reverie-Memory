@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
-[ext_resource type="Texture2D" path="res://resources/future_bg.PNG" id="1_rcr1l"]
+[ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_ao5pu"]
 [ext_resource type="AudioStream" uid="uid://cav4leymopix0" path="res://resources/sounds/call mom 3.mp3" id="2_pwwtv"]
 [ext_resource type="Script" path="res://scripts/monitor_screen.gd" id="3_2qq3g"]
 [ext_resource type="Script" path="res://scripts/Black_Light_box.gd" id="3_4486u"]
@@ -113,10 +113,10 @@ grow_vertical = 2
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="FutureBg" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(574, 324)
-scale = Vector2(0.603704, 0.603704)
-texture = ExtResource("1_rcr1l")
+[node name="BgFutNolight" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(576, 325)
+scale = Vector2(0.605556, 0.605556)
+texture = ExtResource("1_ao5pu")
 
 [node name="Monitor" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -129,18 +129,20 @@ text = "monitor"
 script = ExtResource("1_6ckpl")
 
 [node name="Black_Light_box" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -333.0
-offset_top = -194.0
-offset_right = -155.0
-offset_bottom = -118.0
+offset_left = -222.0
+offset_top = -281.0
+offset_right = 1.0
+offset_bottom = -159.0
 grow_horizontal = 0
 grow_vertical = 0
+rotation = 0.723023
 text = "Mystery box"
 script = ExtResource("3_4486u")
 
@@ -149,6 +151,7 @@ stream = ExtResource("2_pwwtv")
 autoplay = true
 
 [node name="StickyNote" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -559,6 +562,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PictureFrame" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -675,6 +679,7 @@ grow_vertical = 0
 color = Color(0, 1, 0, 1)
 
 [node name="NoteBook" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 239.0
 offset_top = 490.0
@@ -685,6 +690,7 @@ Book"
 script = ExtResource("10_4dff4")
 
 [node name="Notebook Layer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="NoteScreen" type="ColorRect" parent="Notebook Layer"]
 visible = false
