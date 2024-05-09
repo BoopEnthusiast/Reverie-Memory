@@ -1,22 +1,33 @@
 [gd_scene load_steps=6 format=3 uid="uid://fc0mq35dotpr"]
 
-[ext_resource type="Shader" path="res://scripts/blacklight_code.gdshader" id="1_5du48"]
 [ext_resource type="Texture2D" uid="uid://f1r5a1hd054w" path="res://resources/feather.PNG" id="1_6hmca"]
 [ext_resource type="Script" path="res://scripts/blacklight.gd" id="2_cqy8k"]
 [ext_resource type="Texture2D" uid="uid://b2jhjnuyfdndo" path="res://resources/NUMS.PNG" id="3_uu5v6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvjud"]
-shader = ExtResource("1_5du48")
+[sub_resource type="Shader" id="Shader_1d35f"]
+code = "shader_type canvas_item;
 
-[node name="BlacklightCode" type="BackBufferCopy"]
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	//COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
+	//COLOR.a = texture(TEXTURE, UV).a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvjud"]
+shader = SubResource("Shader_1d35f")
+
+[node name="BlacklightCode" type="CanvasLayer"]
 
 [node name="Blacklight" type="Sprite2D" parent="."]
-modulate = Color(0.379184, 0.000103265, 0.381707, 1)
+self_modulate = Color(0.415686, 0, 0.423529, 0.521569)
+clip_children = 2
 material = SubResource("ShaderMaterial_nvjud")
 scale = Vector2(0.668506, 0.668506)
 texture = ExtResource("1_6hmca")
 script = ExtResource("2_cqy8k")
 
-[node name="Nums" type="Sprite2D" parent="."]
-position = Vector2(22, 89)
+[node name="Nums" type="Sprite2D" parent="Blacklight"]
+scale = Vector2(1.49587, 1.49587)
 texture = ExtResource("3_uu5v6")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=31 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_ao5pu"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
 [ext_resource type="Script" path="res://scenes/NoteBook.gd" id="10_4dff4"]
 [ext_resource type="Script" path="res://scenes/NoteScreen.gd" id="11_p0scv"]
+[ext_resource type="Shader" path="res://scripts/blacklight_code.gdshader" id="13_02buq"]
+[ext_resource type="Texture2D" uid="uid://f1r5a1hd054w" path="res://resources/feather.PNG" id="14_vnfsn"]
+[ext_resource type="Script" path="res://scripts/blacklight.gd" id="15_8s8nq"]
+[ext_resource type="Texture2D" uid="uid://b2jhjnuyfdndo" path="res://resources/NUMS.PNG" id="16_2873g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
 
@@ -101,6 +105,9 @@ script/source = "extends AnimatedSprite2D
 func _ready():
 	play()
 "
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvjud"]
+shader = ExtResource("13_02buq")
 
 [node name="Future" type="Control"]
 layout_mode = 3
@@ -700,6 +707,21 @@ offset_top = 35.0
 offset_right = 274.0
 offset_bottom = 245.0
 script = ExtResource("11_p0scv")
+
+[node name="BlacklightCode" type="CanvasLayer" parent="."]
+
+[node name="Blacklight" type="Sprite2D" parent="BlacklightCode"]
+self_modulate = Color(0.415686, 0, 0.423529, 0.521569)
+clip_children = 2
+material = SubResource("ShaderMaterial_nvjud")
+position = Vector2(576, 324)
+scale = Vector2(0.668506, 0.668506)
+texture = ExtResource("14_vnfsn")
+script = ExtResource("15_8s8nq")
+
+[node name="Nums" type="Sprite2D" parent="BlacklightCode/Blacklight"]
+scale = Vector2(0.883251, 0.883251)
+texture = ExtResource("16_2873g")
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
