@@ -19,3 +19,8 @@ func _on_button_2_pressed():
 func _on_button_3_pressed():
 	if button_3.Current_Number == 9:
 		Button3 = true
+
+func Check_If_True():
+	if Button1 and Button2 and Button3 == true:
+		print("done")
+		
