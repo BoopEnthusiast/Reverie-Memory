@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var box = $"../CanvasLayer/Box_closeup"
+@onready var box = $"../BoxLayer/Box_closeup"
 
 
 func _on_pressed():
