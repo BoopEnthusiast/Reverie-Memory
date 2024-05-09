@@ -711,16 +711,15 @@ script = ExtResource("11_p0scv")
 [node name="BlacklightCode" type="CanvasLayer" parent="."]
 
 [node name="Blacklight" type="Sprite2D" parent="BlacklightCode"]
-self_modulate = Color(0.415686, 0, 0.423529, 0.521569)
-clip_children = 2
+self_modulate = Color(0.435294, 0.301961, 0.45098, 0.286275)
 material = SubResource("ShaderMaterial_nvjud")
 position = Vector2(576, 324)
-scale = Vector2(0.668506, 0.668506)
+scale = Vector2(0.291783, 0.291783)
 texture = ExtResource("14_vnfsn")
 script = ExtResource("15_8s8nq")
 
 [node name="Nums" type="Sprite2D" parent="BlacklightCode/Blacklight"]
-scale = Vector2(0.883251, 0.883251)
+scale = Vector2(2.02337, 2.02337)
 texture = ExtResource("16_2873g")
 
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
