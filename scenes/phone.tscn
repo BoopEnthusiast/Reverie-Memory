@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3 uid="uid://bym0d0xbbsg6f"]
+
+[ext_resource type="PackedScene" uid="uid://cbdvs8m85edco" path="res://scenes/phone_button.tscn" id="1_6727m"]
+
+[sub_resource type="GDScript" id="GDScript_1a22y"]
+script/source = "extends GridContainer
+
+
+@onready var num_buttons = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9, $Button10]
+
+
+func _ready():
+	for button in num_buttons:
+		
+
+
+"
+
+[sub_resource type="Theme" id="Theme_c0n50"]
+default_font_size = 50
+
+[node name="PhoneLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -261.0
+offset_right = 255.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 31.0
+offset_right = 168.0
+offset_bottom = 480.0
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -113.0
+offset_right = -113.0
+offset_bottom = 210.0
+grow_horizontal = 0
+grow_vertical = 2
+columns = 3
+script = SubResource("GDScript_1a22y")
+
+[node name="Button" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "2"
+
+[node name="Button3" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "3"
+
+[node name="Button4" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "4"
+
+[node name="Button5" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "5"
+
+[node name="Button6" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "6"
+
+[node name="Button7" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "7"
+
+[node name="Button8" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "8"
+
+[node name="Button9" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "9"
+
+[node name="Control" type="Control" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+
+[node name="Button10" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "0"
+
+[node name="Button11" type="Button" parent="Background/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c0n50")
+text = "#"
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -338.0
+offset_top = 40.0
+offset_right = -12.0
+offset_bottom = 83.0
+grow_horizontal = 0
+horizontal_alignment = 1
