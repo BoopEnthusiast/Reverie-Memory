@@ -201,6 +201,7 @@ Call mom"
 [node name="MonitorLayer" type="CanvasLayer" parent="."]
 
 [node name="MonitorScreen" type="ColorRect" parent="MonitorLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -214,7 +215,6 @@ color = Color(0, 0.631373, 0.682353, 1)
 script = ExtResource("3_2qq3g")
 
 [node name="PasswordScreen" type="Control" parent="MonitorLayer/MonitorScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -270,18 +270,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Welcome back, user"
 
-[node name="ExitButton" type="Button" parent="MonitorLayer/MonitorScreen"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -67.0
-offset_bottom = 67.0
-grow_horizontal = 0
-text = "X"
-script = ExtResource("6_0yq6i")
-
 [node name="Browser" type="TabContainer" parent="MonitorLayer/MonitorScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -358,6 +348,17 @@ scale = Vector2(2.12083, 2.12083)
 sprite_frames = SubResource("SpriteFrames_qtclf")
 frame_progress = 0.0475292
 script = SubResource("GDScript_byjt4")
+
+[node name="ExitButton" type="Button" parent="MonitorLayer/MonitorScreen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 67.0
+grow_horizontal = 0
+text = "X"
+script = ExtResource("6_0yq6i")
 
 [node name="BoxLayer" type="CanvasLayer" parent="."]
 layer = 2
