@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=34 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_ao5pu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b8menc1v7exnu" path="res://resources/piano cat.png" id="6_jg1yv"]
 [ext_resource type="Script" path="res://scripts/cod line.gd" id="6_sw8h6"]
 [ext_resource type="PackedScene" uid="uid://c7wrophf506oy" path="res://scenes/colourclick.tscn" id="6_tk1gx"]
+[ext_resource type="FontFile" uid="uid://b8j367wsg668" path="res://resources/Rm-Regular.otf" id="7_yebvn"]
 [ext_resource type="Script" path="res://scenes/NoteBook.gd" id="10_4dff4"]
 [ext_resource type="Script" path="res://scenes/NoteScreen.gd" id="11_p0scv"]
 [ext_resource type="Shader" path="res://scripts/blacklight_code.gdshader" id="13_02buq"]
@@ -18,6 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://b2jhjnuyfdndo" path="res://resources/NUMS.PNG" id="16_2873g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbqql"]
+
+[sub_resource type="Theme" id="Theme_7tq4o"]
+default_font_size = 34
+
+[sub_resource type="Theme" id="Theme_k4hpc"]
+default_font = ExtResource("7_yebvn")
+default_font_size = 41
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_plxp6"]
 atlas = ExtResource("6_jg1yv")
@@ -193,7 +201,6 @@ Call mom"
 [node name="MonitorLayer" type="CanvasLayer" parent="."]
 
 [node name="MonitorScreen" type="ColorRect" parent="MonitorLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -207,6 +214,7 @@ color = Color(0, 0.631373, 0.682353, 1)
 script = ExtResource("3_2qq3g")
 
 [node name="PasswordScreen" type="Control" parent="MonitorLayer/MonitorScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -274,7 +282,6 @@ text = "X"
 script = ExtResource("6_0yq6i")
 
 [node name="Browser" type="TabContainer" parent="MonitorLayer/MonitorScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -295,35 +302,51 @@ layout_mode = 1
 offset_right = 261.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 30
-text = "https://boop.wiki/"
+text = "https://dcode.fr"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MonitorLayer/MonitorScreen/Browser/Translation Site"]
+[node name="English" type="RichTextLabel" parent="MonitorLayer/MonitorScreen/Browser/Translation Site"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -465.0
-offset_top = -146.0
-offset_right = 465.0
-offset_bottom = 146.0
+offset_left = -350.0
+offset_top = -187.5
+offset_right = 350.0
+offset_bottom = 234.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/bold_font_size = 20
-theme_override_font_sizes/italics_font_size = 30
-bbcode_enabled = true
-text = "
-[i]Secure Connection Failed[/i]
+theme = SubResource("Theme_7tq4o")
+text = "A						J						S
+B						K						T
+C						L						U
+D						M						V
+E						N						W
+F						O						X
+G						P						Y
+H						Q						Z
+I						R"
 
-An error occurred during a connection to boop.wiki. PR_CONNECT_RESET_ERROR
-
-Error code: PR_CONNECT_RESET_ERROR
-
-    The page you are trying to view cannot be shown because the authenticity of the received data could not be verified.
-    Please contact the web site owners to inform them of this problem.
-
-[b]Please open website in browser on another device[/b]"
+[node name="Not English" type="RichTextLabel" parent="MonitorLayer/MonitorScreen/Browser/Translation Site/English"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k4hpc")
+text = "A					J					S
+B					K						T
+C						L					U
+D					M					V
+E					N					W
+F					O						X
+G					P					Y
+H						Q					Z
+I					R"
 
 [node name="Genuinely Useless (but cute) Site" type="TabBar" parent="MonitorLayer/MonitorScreen/Browser"]
 visible = false
@@ -709,8 +732,10 @@ offset_bottom = 245.0
 script = ExtResource("11_p0scv")
 
 [node name="BlacklightCode" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Blacklight" type="Sprite2D" parent="BlacklightCode"]
+visible = false
 self_modulate = Color(0.435294, 0.301961, 0.45098, 0.286275)
 material = SubResource("ShaderMaterial_nvjud")
 position = Vector2(576, 324)
