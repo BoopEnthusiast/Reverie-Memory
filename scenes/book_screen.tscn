@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ongihxf4wltx" path="res://scenes/draggable_symbol.tscn" id="4_qijxc"]
 
 [node name="Book_Screen" type="ColorRect"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -180,5 +179,22 @@ theme_override_font_sizes/font_size = 71
 text = "You win!!!
 
 More to come soon"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 18.5
+offset_right = 87.0
+offset_bottom = 41.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Question:"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 246.0
+offset_top = 80.5
+offset_right = 321.0
+offset_bottom = 103.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Answer:"
 
 [connection signal="pressed" from="Exit_Button" to="." method="_on_exit_button_pressed"]

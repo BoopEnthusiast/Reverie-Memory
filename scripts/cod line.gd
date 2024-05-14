@@ -13,6 +13,6 @@ func color_changed():
 	var is_correct = true
 	var i = 0
 	for button in nodes:
-		if not button.CurrentColour == what_colors_should_be[i]:
+		if not button.current_color == what_colors_should_be[i]:
 			is_correct = false
 		i += 1

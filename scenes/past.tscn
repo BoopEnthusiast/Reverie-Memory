@@ -150,6 +150,7 @@ text = ""
 layer = 2
 
 [node name="BookScreen" parent="Screens" instance=ExtResource("2_36bpd")]
+visible = false
 
 [node name="Button Grid" type="Control" parent="."]
 layout_mode = 1
