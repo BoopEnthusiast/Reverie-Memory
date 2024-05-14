@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=20 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://dasbal0142kjs" path="res://resources/bg_past.PNG" id="1_n4si2"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scenes/Button.gd" id="12_py0wc"]
 [ext_resource type="Script" path="res://scenes/Button2.gd" id="13_qpmxj"]
 [ext_resource type="Script" path="res://scenes/Button3.gd" id="14_casmk"]
+[ext_resource type="Script" path="res://scenes/DoHomework.gd" id="16_6qre4"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
 resource_name = "Book"
@@ -375,6 +376,17 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "0"
 script = ExtResource("14_casmk")
+
+[node name="DoHomework" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 239.0
+offset_top = 3.0
+offset_right = 1040.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 40
+text = "I need to do my HOMEWORK first"
+script = ExtResource("16_6qre4")
 
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]

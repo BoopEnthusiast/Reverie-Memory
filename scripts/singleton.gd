@@ -3,6 +3,8 @@ extends Node
 var is_dragging := false
 var monitor_unlocked := false
 var homework_done := false
+@onready var do_homework = $DoHomework #made variable for time sensitive label dunno what to do from here
+
 
 var past_winning_label: Label
 var has_won_buttons := false
