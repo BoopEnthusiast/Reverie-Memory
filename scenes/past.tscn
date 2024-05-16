@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=16 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://dasbal0142kjs" path="res://resources/bg_past.PNG" id="1_n4si2"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
@@ -10,11 +10,7 @@
 [ext_resource type="Script" path="res://scripts/Button Grid.gd" id="7_kydrd"]
 [ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://scenes/ColouredButtons.tscn" id="8_8a5px"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
-[ext_resource type="Script" path="res://scenes/Box_folder.gd" id="11_1iv4s"]
-[ext_resource type="Script" path="res://scripts/close.gd" id="11_od8cf"]
-[ext_resource type="Script" path="res://scenes/Button.gd" id="12_py0wc"]
-[ext_resource type="Script" path="res://scenes/Button2.gd" id="13_qpmxj"]
-[ext_resource type="Script" path="res://scenes/Button3.gd" id="14_casmk"]
+[ext_resource type="PackedScene" uid="uid://rbj1h53ys526" path="res://box_folder.tscn" id="11_q5bf7"]
 [ext_resource type="Script" path="res://scenes/DoHomework.gd" id="16_6qre4"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
@@ -298,85 +294,7 @@ grow_vertical = 2
 text = "You win!!!!"
 script = SubResource("GDScript_23jo2")
 
-[node name="Box_folder" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("11_1iv4s")
-
-[node name="Lock" type="ColorRect" parent="Box_folder"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = -292.0
-offset_right = 184.0
-offset_bottom = 298.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.180392, 0.509804, 0.266667, 1)
-
-[node name="close" type="Button" parent="Box_folder"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 137.0
-offset_top = 32.0
-offset_right = 185.0
-offset_bottom = 79.0
-grow_horizontal = 2
-text = "X"
-script = ExtResource("11_od8cf")
-
-[node name="Button1" type="Button" parent="Box_folder"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -225.0
-offset_right = 60.0
-offset_bottom = -107.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "0"
-script = ExtResource("13_qpmxj")
-
-[node name="Button2" type="Button" parent="Box_folder"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -59.0
-offset_right = 60.0
-offset_bottom = 57.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "0"
-script = ExtResource("12_py0wc")
-
-[node name="Button3" type="Button" parent="Box_folder"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -57.0
-offset_top = 104.0
-offset_right = 62.0
-offset_bottom = 220.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "0"
-script = ExtResource("14_casmk")
+[node name="Box_folder" parent="." instance=ExtResource("11_q5bf7")]
 
 [node name="DoHomework" type="Label" parent="."]
 visible = false
@@ -392,11 +310,3 @@ script = ExtResource("16_6qre4")
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
-[connection signal="pressed" from="Box_folder/close" to="Box_folder" method="_on_close_pressed"]
-[connection signal="pressed" from="Box_folder/close" to="Box_folder/close" method="_on_pressed"]
-[connection signal="pressed" from="Box_folder/Button1" to="Box_folder" method="_on_button_1_pressed"]
-[connection signal="pressed" from="Box_folder/Button1" to="Box_folder/Button1" method="_on_pressed"]
-[connection signal="pressed" from="Box_folder/Button2" to="Box_folder" method="_on_button_2_pressed"]
-[connection signal="pressed" from="Box_folder/Button2" to="Box_folder/Button2" method="_on_pressed"]
-[connection signal="pressed" from="Box_folder/Button3" to="Box_folder" method="_on_button_3_pressed"]
-[connection signal="pressed" from="Box_folder/Button3" to="Box_folder/Button3" method="_on_pressed"]
