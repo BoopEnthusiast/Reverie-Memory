@@ -6,14 +6,16 @@
 script/source = "extends GridContainer
 
 
-@onready var num_buttons = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9, $Button10]
+@onready var num_buttons: Array[PhoneButton] = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9, $Button10]
 
 
 func _ready():
 	for button in num_buttons:
-		pass
+		button.number_pressed.connect(num_changed)
 
 
+func num_changed(num: int) -> void:
+	pass
 "
 
 [sub_resource type="Theme" id="Theme_c0n50"]
@@ -74,53 +76,52 @@ script = SubResource("GDScript_1a22y")
 [node name="Button" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="Background/GridContainer"]
+[node name="Button2" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "2"
+number = 2
 
-[node name="Button3" type="Button" parent="Background/GridContainer"]
+[node name="Button3" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "3"
+number = 3
 
-[node name="Button4" type="Button" parent="Background/GridContainer"]
+[node name="Button4" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "4"
+number = 4
 
-[node name="Button5" type="Button" parent="Background/GridContainer"]
+[node name="Button5" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "5"
+number = 5
 
-[node name="Button6" type="Button" parent="Background/GridContainer"]
+[node name="Button6" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "6"
+number = 6
 
-[node name="Button7" type="Button" parent="Background/GridContainer"]
+[node name="Button7" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "7"
+number = 7
 
-[node name="Button8" type="Button" parent="Background/GridContainer"]
+[node name="Button8" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "8"
+number = 8
 
-[node name="Button9" type="Button" parent="Background/GridContainer"]
+[node name="Button9" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "9"
+number = 9
 
 [node name="Control" type="Control" parent="Background/GridContainer"]
 layout_mode = 2
 theme = SubResource("Theme_c0n50")
 
-[node name="Button10" type="Button" parent="Background/GridContainer"]
+[node name="Button10" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
-theme = SubResource("Theme_c0n50")
 text = "0"
 
 [node name="Button11" type="Button" parent="Background/GridContainer"]

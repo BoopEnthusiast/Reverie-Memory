@@ -1,25 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbdvs8m85edco"]
 
+[ext_resource type="Script" path="res://scripts/phone_button.gd" id="1_08diw"]
+
 [sub_resource type="Theme" id="Theme_c0n50"]
 default_font_size = 50
-
-[sub_resource type="GDScript" id="GDScript_ckud5"]
-script/source = "class_name PhoneButton extends Button
-
-
-@export_range(0, 9) var number: int
-
-signal number_pressed(number: int)
-
-
-func _on_pressed():
-	number_pressed.emit(number)
-"
 
 [node name="Button" type="Button"]
 theme = SubResource("Theme_c0n50")
 text = "1"
-script = SubResource("GDScript_ckud5")
-number = 1
+script = ExtResource("1_08diw")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
