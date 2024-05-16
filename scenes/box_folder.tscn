@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://rbj1h53ys526"]
 
-[ext_resource type="Script" path="res://scenes/Box_folder.gd" id="1_n8kju"]
-[ext_resource type="Script" path="res://scripts/close.gd" id="2_fhwv6"]
-[ext_resource type="Script" path="res://scenes/Button2.gd" id="3_s4qb3"]
-[ext_resource type="Script" path="res://scenes/Button.gd" id="4_q1j6q"]
-[ext_resource type="Script" path="res://scenes/Button3.gd" id="5_1j26j"]
+[ext_resource type="Script" path="res://scripts/Box_folder.gd" id="1_bhvg7"]
+[ext_resource type="Script" path="res://scripts/close.gd" id="2_yr2x4"]
+[ext_resource type="Script" path="res://scenes/Button2.gd" id="3_72has"]
+[ext_resource type="Script" path="res://scenes/Button.gd" id="4_g7jbt"]
+[ext_resource type="Script" path="res://scenes/Button3.gd" id="5_lllhw"]
 
 [node name="Box_folder" type="CanvasLayer"]
 visible = false
-script = ExtResource("1_n8kju")
+script = ExtResource("1_bhvg7")
 
 [node name="Lock" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -36,7 +36,7 @@ offset_right = 185.0
 offset_bottom = 79.0
 grow_horizontal = 2
 text = "X"
-script = ExtResource("2_fhwv6")
+script = ExtResource("2_yr2x4")
 
 [node name="Button1" type="Button" parent="."]
 anchors_preset = 8
@@ -52,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "0"
-script = ExtResource("3_s4qb3")
+script = ExtResource("3_72has")
 
 [node name="Button2" type="Button" parent="."]
 anchors_preset = 8
@@ -68,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "0"
-script = ExtResource("4_q1j6q")
+script = ExtResource("4_g7jbt")
 
 [node name="Button3" type="Button" parent="."]
 anchors_preset = 8
@@ -84,7 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "0"
-script = ExtResource("5_1j26j")
+script = ExtResource("5_lllhw")
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="close" to="close" method="_on_pressed"]

@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/Button Grid.gd" id="7_kydrd"]
 [ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://scenes/ColouredButtons.tscn" id="8_8a5px"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
-[ext_resource type="PackedScene" uid="uid://rbj1h53ys526" path="res://box_folder.tscn" id="11_q5bf7"]
+[ext_resource type="PackedScene" uid="uid://rbj1h53ys526" path="res://scenes/box_folder.tscn" id="11_q5bf7"]
 [ext_resource type="Script" path="res://scenes/DoHomework.gd" id="16_6qre4"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
