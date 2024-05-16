@@ -1,4 +1,5 @@
 extends Button
+@onready var box_folder = $".."
 
 var Current_Number = 0
 
@@ -12,4 +13,6 @@ func _on_pressed():
 	if Current_Number == 10:
 		Current_Number = 0
 	text = str(Current_Number)
+	box_folder.button_1_changed()
+	
 

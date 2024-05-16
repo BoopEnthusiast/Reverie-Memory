@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://rbj1h53ys526"]
 
-[ext_resource type="Script" path="res://scripts/Box_folder.gd" id="1_bhvg7"]
+[ext_resource type="Script" path="res://scripts/Box_folder.gd" id="1_ut5t5"]
 [ext_resource type="Script" path="res://scripts/close.gd" id="2_yr2x4"]
 [ext_resource type="Script" path="res://scenes/Button2.gd" id="3_72has"]
 [ext_resource type="Script" path="res://scenes/Button.gd" id="4_g7jbt"]
@@ -8,7 +8,7 @@
 
 [node name="Box_folder" type="CanvasLayer"]
 visible = false
-script = ExtResource("1_bhvg7")
+script = ExtResource("1_ut5t5")
 
 [node name="Lock" type="ColorRect" parent="."]
 anchors_preset = 8
