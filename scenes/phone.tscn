@@ -7,15 +7,27 @@ script/source = "extends GridContainer
 
 
 @onready var num_buttons: Array[PhoneButton] = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9, $Button10]
+@onready var button = $\"../Button\"
+@onready var label_2 = $\"../Label2\"
 
+var num_needed: String = \"791036936\"
+var current_num: String = \"\"
 
 func _ready():
 	for button in num_buttons:
-		button.number_pressed.connect(num_changed)
+		button.number_pressed.connect(num_pressed)
 
 
-func num_changed(num: int) -> void:
-	pass
+func num_pressed(num: int) -> void:
+	current_num += str(num)
+	if current_num == num_needed:
+		button.visible = false
+		label_2.visible = true
+
+
+
+func _on_hash_pressed():
+	current_num.substr(len(current_num) - 1)
 "
 
 [sub_resource type="Theme" id="Theme_c0n50"]
@@ -33,7 +45,7 @@ func _on_pressed():
 "
 
 [node name="PhoneLayer" type="CanvasLayer"]
-layer = 2
+layer = 3
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -139,6 +151,7 @@ offset_top = 40.0
 offset_right = -12.0
 offset_bottom = 83.0
 grow_horizontal = 0
+text = "2454625"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Background"]
@@ -149,7 +162,27 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+theme_override_font_sizes/font_size = 35
 text = "X"
 script = SubResource("GDScript_kb24s")
 
+[node name="Label2" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -165.0
+offset_right = 20.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Winner!!
+You can go now
+you are dismissed"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Background/GridContainer/Button11" to="Background/GridContainer" method="_on_hash_pressed"]
 [connection signal="pressed" from="Background/Button" to="Background/Button" method="_on_pressed"]
