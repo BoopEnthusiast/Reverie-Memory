@@ -15,13 +15,13 @@ func pressed_1():
 		print("4")
 
 func pressed_2():
-	if button_1.Current_Number == 2:
-		Button1 = true
+	if button_2.Current_Number == 2:
+		Button2 = true
 		print("2")
 
 func pressed_3():
-	if button_1.Current_Number == 9:
-		Button1 = true
+	if button_3.Current_Number == 9:
+		Button3 = true
 		print("9")
 
 func Check_If_True():

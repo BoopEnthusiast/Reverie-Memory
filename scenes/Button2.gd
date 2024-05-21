@@ -9,4 +9,5 @@ func _on_pressed():
 		Current_Number = 0
 	text = str(Current_Number)
 	box_folder.pressed_1()
+	box_folder.Check_If_True()
 
