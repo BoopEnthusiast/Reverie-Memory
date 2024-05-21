@@ -1,9 +1,6 @@
 extends Button
 var Current_Number = 0
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var box_folder = $".."
 
 	
 func _on_pressed():
@@ -11,4 +8,5 @@ func _on_pressed():
 	if Current_Number == 10:
 		Current_Number = 0
 	text = str(Current_Number)
+	box_folder.pressed_2()
 
