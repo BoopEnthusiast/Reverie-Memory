@@ -2,6 +2,7 @@ extends Control
 
 @onready var nodes: Array  = [$Code, $Code2, $Code3, $Code4, $Code5, $Code6, $Code7, $Code8, $Code9, $Code10, $Code11, $Code12, $Code13, $Code14]
 var what_colors_should_be: Array[int] = [1,1,2,3,2,1,2,3,3,2,1,3,2,1]
+@onready var uv_light = $"../UVLight"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,10 @@ func color_changed():
 	var is_correct = true
 	var i = 0
 	for button in nodes:
+		print(button.current_color,"  ",what_colors_should_be[i],"  ", is_correct)
 		if not button.current_color == what_colors_should_be[i]:
 			is_correct = false
 		i += 1
+	if is_correct:
+		visible = false
+		uv_light.visible = true

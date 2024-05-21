@@ -7,6 +7,7 @@ var is_future := false
 @onready var do_homework #made variable for time sensitive label dunno what to do from here
 
 var cursor_trail_particles_node: TrailParticles
+var uv_light_node: UVLight
 
 
 var past_winning_label: Label

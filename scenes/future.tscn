@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dkj63dhupkfyy"]
+[gd_scene load_steps=37 format=3 uid="uid://dkj63dhupkfyy"]
 
 [ext_resource type="Script" path="res://scripts/monitor.gd" id="1_6ckpl"]
 [ext_resource type="Texture2D" uid="uid://bwkxtw2xrk4ss" path="res://resources/bg_fut_nolight.PNG" id="1_ao5pu"]
@@ -113,6 +113,15 @@ script/source = "extends AnimatedSprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	play()
+"
+
+[sub_resource type="GDScript" id="GDScript_3wnqf"]
+script/source = "extends Button
+
+
+func _on_pressed():
+	SingletonNode.uv_light_node.enable()
+	get_parent().visible = false
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nvjud"]
@@ -613,6 +622,67 @@ offset_bottom = 222.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="UVLight" type="Control" parent="BoxLayer/Box_closeup"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -67.0
+offset_right = 175.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BoxLayer/Box_closeup/UVLight"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -40.0
+offset_right = 177.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.195545, 0.195545, 0.195545, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BoxLayer/Box_closeup/UVLight"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -64.0
+offset_right = -135.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Button" type="Button" parent="BoxLayer/Box_closeup/UVLight"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.5
+offset_top = 19.0
+offset_right = 64.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Collect UV Light"
+script = SubResource("GDScript_3wnqf")
+
 [node name="PictureFrame" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
@@ -758,6 +828,7 @@ layer = 0
 [node name="Blacklight" type="Sprite2D" parent="BlacklightCode"]
 visible = false
 self_modulate = Color(0.435294, 0.301961, 0.45098, 0.286275)
+clip_children = 2
 material = SubResource("ShaderMaterial_nvjud")
 position = Vector2(576, 324)
 scale = Vector2(0.291783, 0.291783)
@@ -791,6 +862,7 @@ visible = false
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="MonitorLayer/MonitorScreen/ExitButton" method="_on_pressed"]
 [connection signal="pressed" from="BoxLayer/Box_closeup/ExitButton2" to="BoxLayer/Box_closeup" method="_on_exit_button_2_pressed"]
+[connection signal="pressed" from="BoxLayer/Box_closeup/UVLight/Button" to="BoxLayer/Box_closeup/UVLight/Button" method="_on_pressed"]
 [connection signal="pressed" from="NoteBook" to="NoteBook" method="_on_pressed"]
 [connection signal="mouse_entered" from="Phone" to="Phone" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Phone" to="Phone" method="_on_mouse_exited"]
