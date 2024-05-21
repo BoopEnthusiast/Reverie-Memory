@@ -3,7 +3,10 @@ extends Node
 var is_dragging := false
 var monitor_unlocked := false
 var homework_done := false
+var is_future := false 
 @onready var do_homework #made variable for time sensitive label dunno what to do from here
+
+var cursor_trail_particles_node: TrailParticles
 
 
 var past_winning_label: Label
