@@ -127,6 +127,14 @@ script/source = "extends Button
 func _on_pressed():
 	phone_layer.visible = true
 
+
+
+func _on_mouse_entered():
+	SingletonNode.cursor_trail_particles_node.enable()
+
+
+func _on_mouse_exited():
+	SingletonNode.cursor_trail_particles_node.disable()
 "
 
 [node name="Future" type="Control"]
@@ -773,11 +781,17 @@ script = SubResource("GDScript_adm6v")
 [node name="PhoneLayer" parent="." instance=ExtResource("18_3hif3")]
 visible = false
 
+[connection signal="mouse_entered" from="Monitor" to="Monitor" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Monitor" to="Monitor" method="_on_mouse_exited"]
 [connection signal="pressed" from="Monitor" to="Monitor" method="_on_pressed"]
+[connection signal="mouse_entered" from="Black_Light_box" to="Black_Light_box" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Black_Light_box" to="Black_Light_box" method="_on_mouse_exited"]
 [connection signal="pressed" from="Black_Light_box" to="BoxLayer/Box_closeup" method="_on_black_light_box_pressed"]
 [connection signal="text_changed" from="MonitorLayer/MonitorScreen/PasswordScreen/PasswordField" to="MonitorLayer/MonitorScreen" method="_on_password_changed"]
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="Monitor" method="_on_exit_pressed"]
 [connection signal="pressed" from="MonitorLayer/MonitorScreen/ExitButton" to="MonitorLayer/MonitorScreen/ExitButton" method="_on_pressed"]
 [connection signal="pressed" from="BoxLayer/Box_closeup/ExitButton2" to="BoxLayer/Box_closeup" method="_on_exit_button_2_pressed"]
 [connection signal="pressed" from="NoteBook" to="NoteBook" method="_on_pressed"]
+[connection signal="mouse_entered" from="Phone" to="Phone" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phone" to="Phone" method="_on_mouse_exited"]
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]

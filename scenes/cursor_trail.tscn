@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://68wn1ck2k6wc"]
+[gd_scene load_steps=11 format=3 uid="uid://68wn1ck2k6wc"]
 
 [ext_resource type="Script" path="res://scripts/cursor_trail.gd" id="1_g3ba8"]
 [ext_resource type="Texture2D" uid="uid://casp74mq0xrye" path="res://resources/white_circle.svg" id="2_t5j2u"]
+[ext_resource type="Script" path="res://scripts/mouse_particles.gd" id="3_0o6yx"]
 
 [sub_resource type="Curve" id="Curve_02d0c"]
 _data = [Vector2(0, 1), 0.0, -0.356319, 0, 0, Vector2(0.3, 0.5), -1.35579, -1.35579, 0, 0, Vector2(1, 0), -0.137046, 0.0, 0, 0]
@@ -11,6 +12,35 @@ metadata/_snap_enabled = true
 [sub_resource type="Gradient" id="Gradient_lg3xq"]
 interpolation_color_space = 2
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_nprta"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.01755, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rd0cv"]
+curve = SubResource("Curve_nprta")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4iix1"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.1
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -15.04
+linear_accel_max = -5.0
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_rd0cv")
+
+[sub_resource type="Gradient" id="Gradient_3m6uw"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.236421, 0.627246, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sfxae"]
+gradient = SubResource("Gradient_3m6uw")
+width = 1
 
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 5
@@ -32,3 +62,10 @@ script = ExtResource("1_g3ba8")
 [node name="Dot" type="Sprite2D" parent="Trail"]
 scale = Vector2(0.0333333, 0.0333333)
 texture = ExtResource("2_t5j2u")
+
+[node name="Particles" type="GPUParticles2D" parent="Trail/Dot"]
+scale = Vector2(30, 30)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_4iix1")
+texture = SubResource("GradientTexture1D_sfxae")
+script = ExtResource("3_0o6yx")

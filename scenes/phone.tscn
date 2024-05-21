@@ -9,6 +9,7 @@ script/source = "extends GridContainer
 @onready var num_buttons: Array[PhoneButton] = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9, $Button10]
 @onready var button = $\"../Button\"
 @onready var label_2 = $\"../Label2\"
+@onready var label = $\"../Label\"
 
 var num_needed: String = \"791036936\"
 var current_num: String = \"\"
@@ -19,7 +20,11 @@ func _ready():
 
 
 func num_pressed(num: int) -> void:
-	current_num += str(num)
+	if len(current_num) < len(num_needed):
+		current_num += str(num)
+	
+	label.text = str(current_num)
+	
 	if current_num == num_needed:
 		button.visible = false
 		label_2.visible = true
@@ -27,7 +32,8 @@ func num_pressed(num: int) -> void:
 
 
 func _on_hash_pressed():
-	current_num.substr(len(current_num) - 1)
+	current_num = current_num.erase(current_num.length() - 1)
+	label.text = str(current_num)
 "
 
 [sub_resource type="Theme" id="Theme_c0n50"]
@@ -87,6 +93,7 @@ script = SubResource("GDScript_1a22y")
 
 [node name="Button" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
+number = 1
 
 [node name="Button2" parent="Background/GridContainer" instance=ExtResource("1_6727m")]
 layout_mode = 2
@@ -151,7 +158,6 @@ offset_top = 40.0
 offset_right = -12.0
 offset_bottom = 83.0
 grow_horizontal = 0
-text = "2454625"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Background"]
@@ -167,6 +173,7 @@ text = "X"
 script = SubResource("GDScript_kb24s")
 
 [node name="Label2" type="Label" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
