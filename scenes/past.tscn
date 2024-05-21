@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=17 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://dasbal0142kjs" path="res://resources/bg_past.PNG" id="1_n4si2"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b5vnmcy4dln1w" path="res://scenes/ColouredButtons.tscn" id="8_8a5px"]
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
 [ext_resource type="PackedScene" uid="uid://rbj1h53ys526" path="res://scenes/box_folder.tscn" id="11_q5bf7"]
+[ext_resource type="Script" path="res://scripts/close.gd" id="13_vtwne"]
 [ext_resource type="Script" path="res://scenes/DoHomework.gd" id="16_6qre4"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
@@ -307,6 +308,181 @@ theme_override_font_sizes/font_size = 40
 text = "I need to do my HOMEWORK first"
 script = ExtResource("16_6qre4")
 
+[node name="inside_lock" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="base2" type="ColorRect" parent="inside_lock"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -310.0
+offset_right = 310.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.79, 0.498753, 0.1659, 1)
+
+[node name="base" type="ColorRect" parent="inside_lock/base2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.713726, 0.254902, 1)
+
+[node name="ColorRect" type="ColorRect" parent="inside_lock/base2/base"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -260.09
+offset_bottom = -193.09
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.909804, 0.894118, 0.835294, 1)
+
+[node name="Label" type="Label" parent="inside_lock/base2/base"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -251.0
+offset_right = -10.0
+offset_bottom = -202.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0.431373, 1)
+text = "My number, sweetie: 791036936
+Love, mom <3"
+
+[node name="key?" type="ColorRect" parent="inside_lock/base2/base"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 183.0
+offset_right = 130.0
+offset_bottom = 232.0
+color = Color(0.690196, 0.74902, 0.760784, 1)
+
+[node name="ColorRect" type="ColorRect" parent="inside_lock/base2/base/key?"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.5
+offset_top = -2.13
+offset_right = 10.5
+offset_bottom = 89.205
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.690196, 0.74902, 0.760784, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="inside_lock/base2/base/key?"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.195
+offset_top = 79.305
+offset_right = -4.195
+offset_bottom = 89.305
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.690196, 0.74902, 0.760784, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="inside_lock/base2/base/key?"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.245
+offset_top = 54.6
+offset_right = -5.485
+offset_bottom = 64.6
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.690196, 0.74902, 0.760784, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="inside_lock/base2/base/key?"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.5
+offset_top = -12.5
+offset_right = 20.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.713726, 0.254902, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="inside_lock/base2/base"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -132.535
+offset_right = 300.0
+offset_bottom = -112.535
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.788235, 0.498039, 0.164706, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="inside_lock/base2/base"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 104.67
+offset_right = 300.0
+offset_bottom = 124.67
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.788235, 0.498039, 0.164706, 1)
+
+[node name="close" type="Button" parent="inside_lock/base2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 269.0
+offset_top = 1.0
+offset_right = 310.0
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "x"
+script = ExtResource("13_vtwne")
+
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
+[connection signal="pressed" from="inside_lock/base2/close" to="inside_lock/base2/close" method="_on_pressed"]
