@@ -7,9 +7,6 @@ signal color_changed
 var current_color = 0
 
 func _on_pressed():
-	
-	color_changed.emit()
-	
 	current_color += 1
 	for color in colors:
 		color.visible = false
@@ -18,3 +15,5 @@ func _on_pressed():
 		current_color = 0
 	
 	colors[current_color].visible = true
+	
+	color_changed.emit()
