@@ -15,6 +15,7 @@ func pressed_1():
 		print("4")
 	else: 
 		Button1 = false
+		print("fasle")
 
 func pressed_2():
 	if button_2.Current_Number == 2:
@@ -22,6 +23,7 @@ func pressed_2():
 		print("2")
 	else: 
 		Button2 = false
+		print("false")
 
 func pressed_3():
 	if button_3.Current_Number == 9:
@@ -29,6 +31,7 @@ func pressed_3():
 		print("9")
 	else: 
 		Button3 = false
+		print("false")
 
 func Check_If_True():
 	if Button1 and Button2 and Button3 == true:
