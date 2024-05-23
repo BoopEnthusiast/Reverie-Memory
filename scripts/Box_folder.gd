@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var inside_lock = $"../inside_lock"
+@onready var base_2 = $"../inside_lock/base2"
 @onready var button_1 = $Button1
 @onready var button_2 = $Button2
 @onready var button_3 = $Button3
@@ -15,7 +15,6 @@ func pressed_1():
 		print("4")
 	else: 
 		Button1 = false
-		print("fasle")
 
 func pressed_2():
 	if button_2.Current_Number == 2:
@@ -23,7 +22,6 @@ func pressed_2():
 		print("2")
 	else: 
 		Button2 = false
-		print("false")
 
 func pressed_3():
 	if button_3.Current_Number == 9:
@@ -31,10 +29,9 @@ func pressed_3():
 		print("9")
 	else: 
 		Button3 = false
-		print("false")
 
 func Check_If_True():
 	if Button1 and Button2 and Button3 == true:
-		inside_lock.visible = true
+		base_2.visible = true
 
 
