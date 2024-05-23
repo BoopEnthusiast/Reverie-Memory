@@ -13,9 +13,7 @@ func _ready():
 func color_changed():
 	var is_correct = true
 	var i = 0
-	print("Printing colors!\n\n")
 	for button in nodes:
-		print(button.current_color,"  ",what_colors_should_be[i],"  ", is_correct)
 		if not button.current_color == what_colors_should_be[i]:
 			is_correct = false
 		i += 1
