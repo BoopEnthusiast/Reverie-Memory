@@ -5,12 +5,10 @@
 [sub_resource type="GDScript" id="GDScript_xlq8j"]
 script/source = "extends Button
 
-var future_scene = preload(\"res://scenes/future.tscn\")
-
 
 func _on_pressed():
 	SingletonNode.is_future = true
-	get_tree().change_scene_to_packed(future_scene)
+	get_tree().change_scene_to_file(\"res://scenes/future.tscn\")
 	SingletonNode.cursor_trail_particles_node.set_color_future()
 "
 
@@ -18,12 +16,10 @@ func _on_pressed():
 resource_name = ":D"
 script/source = "extends Button
 
-var past_scene = preload(\"res://scenes/past.tscn\")
-
 
 func _on_pressed():
 	SingletonNode.is_future = false
-	get_tree().change_scene_to_packed(past_scene)
+	get_tree().change_scene_to_file(\"res://scenes/past.tscn\")
 	SingletonNode.cursor_trail_particles_node.set_color_past()
 "
 
