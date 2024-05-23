@@ -309,9 +309,9 @@ text = "I need to do my HOMEWORK first"
 script = ExtResource("16_6qre4")
 
 [node name="inside_lock" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="base2" type="ColorRect" parent="inside_lock"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
