@@ -23,6 +23,14 @@ script/source = "extends Button
 
 func _on_pressed():
 	book_screen.visible = true
+
+
+func _on_mouse_entered():
+	SingletonNode.cursor_trail_particles_node.enable()
+
+
+func _on_mouse_exited():
+	SingletonNode.cursor_trail_particles_node.disable()
 "
 
 [sub_resource type="Theme" id="Theme_scsgd"]
@@ -482,7 +490,13 @@ grow_horizontal = 2
 text = "x"
 script = ExtResource("13_vtwne")
 
+[connection signal="mouse_entered" from="Box" to="Box" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Box" to="Box" method="_on_mouse_exited"]
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
+[connection signal="mouse_entered" from="Book" to="Book" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Book" to="Book" method="_on_mouse_exited"]
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
+[connection signal="mouse_entered" from="Button Grid" to="Button Grid" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button Grid" to="Button Grid" method="_on_mouse_exited"]
 [connection signal="pressed" from="inside_lock/base2/close" to="inside_lock/base2/close" method="_on_pressed"]

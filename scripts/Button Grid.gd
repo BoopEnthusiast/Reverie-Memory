@@ -24,6 +24,11 @@ func color_changed():
 		cover_img.visible = false
 		for button in buttons:
 			button.visible = false
-	
-	
 
+
+func _on_mouse_entered():
+	SingletonNode.cursor_trail_particles_node.enable()
+
+
+func _on_mouse_exited():
+	SingletonNode.cursor_trail_particles_node.disable()
