@@ -9,6 +9,8 @@ var is_future := false
 var cursor_trail_particles_node: TrailParticles
 var uv_light_node: UVLight
 
+var has_won_past := false
+
 
 var past_winning_label: Label
 var has_won_buttons := false

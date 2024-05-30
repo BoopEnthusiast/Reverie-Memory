@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://byiwg4wsetanr"]
+[gd_scene load_steps=19 format=3 uid="uid://byiwg4wsetanr"]
 
 [ext_resource type="Texture2D" uid="uid://dasbal0142kjs" path="res://resources/bg_past.PNG" id="1_n4si2"]
 [ext_resource type="PackedScene" uid="uid://l2yq5kc1dh8n" path="res://scenes/book_screen.tscn" id="2_36bpd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5tvrs24d415b" path="res://scenes/past_door_out.tscn" id="8_8rlnr"]
 [ext_resource type="PackedScene" uid="uid://rbj1h53ys526" path="res://scenes/box_folder.tscn" id="11_q5bf7"]
 [ext_resource type="Script" path="res://scripts/close.gd" id="13_vtwne"]
+[ext_resource type="Texture2D" uid="uid://bktfg5lic5ejs" path="res://resources/FINAL SCENES/final_past.jpeg" id="14_xqldd"]
 [ext_resource type="Script" path="res://scenes/DoHomework.gd" id="16_6qre4"]
 
 [sub_resource type="GDScript" id="GDScript_y21dh"]
@@ -42,6 +43,16 @@ script/source = "extends Label
 # Called when the node enters the scene tree for the first time.
 func _enter_tree():
 	SingletonNode.past_winning_label = self
+"
+
+[sub_resource type="GDScript" id="GDScript_p0hai"]
+script/source = "extends Button
+
+@onready var key = $\"..\"
+
+func _on_pressed():
+	SingletonNode.has_won_past = true
+	key.visible = false
 "
 
 [node name="Past" type="Control"]
@@ -451,6 +462,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.713726, 0.254902, 1)
 
+[node name="Button" type="Button" parent="inside_lock/base2/base/key?"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = 121.5
+offset_right = 35.5
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Get key"
+script = SubResource("GDScript_p0hai")
+
 [node name="ColorRect2" type="ColorRect" parent="inside_lock/base2/base"]
 layout_mode = 1
 anchors_preset = 8
@@ -504,6 +531,17 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 35
 text = "I need to do my HOMEWORK first"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_xqldd")
+expand_mode = 1
+
 [connection signal="mouse_entered" from="Box" to="Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Box" to="Box" method="_on_mouse_exited"]
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
@@ -515,4 +553,5 @@ text = "I need to do my HOMEWORK first"
 [connection signal="finished" from="HomeworkReminder" to="." method="_on_homework_reminder_finished"]
 [connection signal="mouse_entered" from="Button Grid" to="Button Grid" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button Grid" to="Button Grid" method="_on_mouse_exited"]
+[connection signal="pressed" from="inside_lock/base2/base/key?/Button" to="inside_lock/base2/base/key?/Button" method="_on_pressed"]
 [connection signal="pressed" from="inside_lock/base2/close" to="inside_lock/base2/close" method="_on_pressed"]

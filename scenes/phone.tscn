@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bym0d0xbbsg6f"]
+[gd_scene load_steps=6 format=3 uid="uid://bym0d0xbbsg6f"]
 
 [ext_resource type="PackedScene" uid="uid://cbdvs8m85edco" path="res://scenes/phone_button.tscn" id="1_6727m"]
+[ext_resource type="Texture2D" uid="uid://w23bk18rdhxi" path="res://resources/FINAL SCENES/final_future.jpeg" id="2_ptknt"]
 
 [sub_resource type="GDScript" id="GDScript_1a22y"]
 script/source = "extends GridContainer
@@ -8,8 +9,8 @@ script/source = "extends GridContainer
 
 @onready var num_buttons: Array[PhoneButton] = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9, $Button10]
 @onready var button = $\"../Button\"
-@onready var label_2 = $\"../Label2\"
 @onready var label = $\"../Label\"
+@onready var texture_rect = $\"../../TextureRect\"
 
 var num_needed: String = \"791036936\"
 var current_num: String = \"\"
@@ -27,7 +28,7 @@ func num_pressed(num: int) -> void:
 	
 	if current_num == num_needed:
 		button.visible = false
-		label_2.visible = true
+		texture_rect.visible = true
 
 
 
@@ -172,24 +173,14 @@ theme_override_font_sizes/font_size = 35
 text = "X"
 script = SubResource("GDScript_kb24s")
 
-[node name="Label2" type="Label" parent="Background"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -165.0
-offset_right = 20.0
-offset_bottom = -142.0
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Winner!!
-You can go now
-you are dismissed"
-horizontal_alignment = 1
+texture = ExtResource("2_ptknt")
+expand_mode = 1
 
 [connection signal="pressed" from="Background/GridContainer/Button11" to="Background/GridContainer" method="_on_hash_pressed"]
 [connection signal="pressed" from="Background/Button" to="Background/Button" method="_on_pressed"]
