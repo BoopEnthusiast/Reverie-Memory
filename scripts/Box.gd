@@ -2,7 +2,8 @@ extends Button
 
 @onready var box = $"../Box_folder"
 @onready var homework_first = $"../Homework First"
-@onready var timer = $"../Book/Timer"
+@onready var timer = $Timer
+
 
 func _on_pressed():
 	if SingletonNode.has_won_homework:

@@ -3,7 +3,8 @@ class_name ColorButton extends Button
 signal color_changed
 
 @onready var colors = [$Red, $Orange, $Yellow, $Green, $Blue, $Purple]
-
+@onready var timer = $"../../Box/Timer"
+@onready var homework_first = $"../../Homework First"
 
 var current_color = 1
 
@@ -20,4 +21,11 @@ func _on_pressed():
 		
 		colors[current_color].visible = true
 		color_changed.emit()
+	
+	else: 
+		homework_first.visible = true
+		timer.start()
+	
 
+func _on_timer_timeout():
+	homework_first.visible = false

@@ -116,7 +116,7 @@ grow_horizontal = 2
 script = ExtResource("4_nqvs1")
 
 [node name="Timer" type="Timer" parent="Box"]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Book" type="Button" parent="."]
@@ -508,6 +508,7 @@ text = "I need to do my HOMEWORK first"
 [connection signal="mouse_exited" from="Box" to="Box" method="_on_mouse_exited"]
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
 [connection signal="timeout" from="Box/Timer" to="Box" method="_on_timer_timeout"]
+[connection signal="timeout" from="Box/Timer" to="Button Grid/Button" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Book" to="Book" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Book" to="Book" method="_on_mouse_exited"]
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
