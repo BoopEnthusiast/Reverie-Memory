@@ -115,6 +115,10 @@ offset_bottom = 236.0
 grow_horizontal = 2
 script = ExtResource("4_nqvs1")
 
+[node name="Timer" type="Timer" parent="Box"]
+wait_time = 5.0
+one_shot = true
+
 [node name="Book" type="Button" parent="."]
 modulate = Color(0.878431, 0.301961, 0.184314, 0)
 layout_mode = 1
@@ -490,9 +494,20 @@ grow_horizontal = 2
 text = "x"
 script = ExtResource("13_vtwne")
 
+[node name="Homework First" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 277.0
+offset_top = 34.0
+offset_right = 840.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 35
+text = "I need to do my HOMEWORK first"
+
 [connection signal="mouse_entered" from="Box" to="Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Box" to="Box" method="_on_mouse_exited"]
 [connection signal="pressed" from="Box" to="Box" method="_on_pressed"]
+[connection signal="timeout" from="Box/Timer" to="Box" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Book" to="Book" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Book" to="Book" method="_on_mouse_exited"]
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
