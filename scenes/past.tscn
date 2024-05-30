@@ -116,7 +116,7 @@ grow_horizontal = 2
 script = ExtResource("4_nqvs1")
 
 [node name="Timer" type="Timer" parent="Box"]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="Book" type="Button" parent="."]
